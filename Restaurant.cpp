@@ -362,51 +362,6 @@ void imp_res::TableList::reverse()
 
 bool imp_res::TableList::swap(MyCustomer* a, MyCustomer* b)
 {
-	//MyCustomer* backup_a = a;
-	//MyCustomer* backup_b = b;
-	//// swap two nodes in a circular doubly linked list
-	//if (a == nullptr || b == nullptr || a == b)
-	//	return false;
-	//if (a->next == b) // a kề với b
-	//{
-	//	//a->next = b->next;
-	//	//b->prev = a->prev;
-	//	//a->prev = b;
-	//	//b->next = a;
-	//	MyCustomer* a_prev = a->prev;
-	//	MyCustomer* b_next = b->next;
-	//	a->next = nullptr;
-	//	a->prev = nullptr;
-	//	b->next = nullptr;
-	//	b->prev = nullptr;
-	//	a_prev->next = nullptr;
-	//	b_next->prev = nullptr;
-	//	a_prev->next = b;
-	//	b_next->prev = a;
-	//	a->next = b_next;
-	//	a->prev = b;
-	//	b->next = a;
-	//	b->prev = a_prev;
-	//}
-	//else // a không kề b
-	//{
-	//	MyCustomer* temp = a->next;
-	//	a->next = b->next;
-	//	b->next = temp;
-	//	temp = a->prev;
-	//	a->prev = b->prev;
-	//	b->prev = temp;
-	//}
-	////if (a->prev != nullptr)
-	////{
-	////	a->prev->next = b;
-	////}
-	////if (b->next != nullptr)
-	////{
-	////	b->next->prev = a;
-	////}
-	////a = backup_a;
-	////b = backup_b;
 
 	MyCustomer* backup_x;
 	bool isbackup_x = true;
