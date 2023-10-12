@@ -1,49 +1,65 @@
 ﻿#include "main.h"
 
+template <class T>
+class SupportClass
+{
+	public:
+	static void swapData(T& a, T& b);
+};
+
 class imp_res : public Restaurant
 {
 public:
+	class CustomerTimeNode;
+	class MyCustomer : public customer
+	{
+	public:
+		MyCustomer();
+		MyCustomer(string name, int energy, MyCustomer* prev, MyCustomer* next);
+		string name;
+		int energy;
+		MyCustomer* prev;
+		MyCustomer* next;
+		CustomerTimeNode* timeNode;
+		void print();
+	};
+	class CustomerTimeNode
+	{
+	public:
+		CustomerTimeNode();
+		CustomerTimeNode(MyCustomer* const, CustomerTimeNode*);
+		MyCustomer* MyCustomerData;
+		CustomerTimeNode* next;
+		static void swap(CustomerTimeNode*, CustomerTimeNode*);
+	private:
+	};
 	class TableList
 	{
-	public: 
-		class MyCustomer : public customer
-		{
-
-		};
 	public:
 		TableList();
 		~TableList();
-		bool addCustomer(customer*);
+		bool addCustomer(MyCustomer*);
 		int getCount();
-		bool isDuplicate(const customer&);
-		customer* findRes();
+		bool isDuplicate(const MyCustomer&);
+		MyCustomer* findRes();
 		void traverse(int);
 		void reverse();
-		bool swap(customer*, customer*);
+		bool swap(MyCustomer*, MyCustomer*);
 		//void setCount();
 	private:
-		customer* head;
+		MyCustomer* head;
 		int count;
-		customer* currentX;
+		MyCustomer* currentX;
 	};
 
 	class CustomerTimeList
 	{
 	public:
-		class CustomerTimeNode
-		{
-		public:
-			CustomerTimeNode();
-			CustomerTimeNode(customer* const, CustomerTimeNode*);
-			customer* customerData;
-			CustomerTimeNode* next;
-		private:
-		};
 	private:
 		CustomerTimeNode* head;
 	public:
 		CustomerTimeList();
-		void addCustomerTime(customer*);
+		void addCustomerTime(MyCustomer*);
 	};
 
 	class WaitingQueue
@@ -55,14 +71,14 @@ public:
 		class WaitingQueueNode
 		{
 		public:
-			WaitingQueueNode(customer*, WaitingQueueNode*);
-			customer* customerData;
+			WaitingQueueNode(MyCustomer*, WaitingQueueNode*);
+			MyCustomer* MyCustomerData;
 			WaitingQueueNode* next;
 		};
 	public:
 		WaitingQueueNode* head;
 		WaitingQueue();
-		void addCustomerToQueue(customer*);
+		void addCustomerToQueue(MyCustomer*);
 		bool isFull();
 		void changeCount(bool);
 		void traverse();
@@ -71,7 +87,7 @@ public:
 
 private:
 	TableList table;
-	CustomerTimeList customerTime;
+	CustomerTimeList MyCustomerTime;
 	WaitingQueue waitingQueue;
 public:	
 	imp_res();
@@ -79,10 +95,10 @@ public:
 	void RED(string name, int energy)
 	{
 		cout << name << " " << energy << endl; // to show that the command has been executed
-		customer* newCust = new customer(name, energy, nullptr, nullptr);
+		MyCustomer* newCust = new MyCustomer(name, energy, nullptr, nullptr);
 		if (table.addCustomer(newCust) == true)
 		{
-			customerTime.addCustomerTime(newCust);
+			MyCustomerTime.addCustomerTime(newCust);
 		}
 		else if (waitingQueue.isFull() == false)
 		{
@@ -113,11 +129,11 @@ public:
 	void LIGHT(int num)
 	{
 		cout << "light " << num << endl;
-		if (num != 0) // print customers in the restaurant
+		if (num != 0) // print MyCustomers in the restaurant
 		{
 			table.traverse(num);
 		}
-		else // print customers in the waiting queue
+		else // print MyCustomers in the waiting queue
 		{
 			waitingQueue.traverse();
 		}
@@ -137,10 +153,10 @@ imp_res::TableList::~TableList()
 {
 }
 
-bool imp_res::TableList::addCustomer(customer* newCustomer)
+bool imp_res::TableList::addCustomer(MyCustomer* newCustomer)
 {
 	// circular doubly linked list
-	customer* newCust;
+	MyCustomer* newCust;
 	if (newCustomer->energy == 0 || isDuplicate(*newCustomer) == true)
 		return false;
 	if (head == nullptr && count < MAXSIZE)
@@ -196,7 +212,7 @@ int imp_res::TableList::getCount()
 	return count;
 }
 
-bool imp_res::TableList::isDuplicate(const customer& newCustomer)
+bool imp_res::TableList::isDuplicate(const MyCustomer& newCustomer)
 {
 	if (head == nullptr)
 	{
@@ -204,7 +220,7 @@ bool imp_res::TableList::isDuplicate(const customer& newCustomer)
 	}
 	else
 	{
-		customer* iterate = head;
+		MyCustomer* iterate = head;
 		do
 		{
 			if (iterate->name == newCustomer.name)
@@ -217,17 +233,17 @@ bool imp_res::TableList::isDuplicate(const customer& newCustomer)
 	return false;
 }
 
-Restaurant::customer* imp_res::TableList::findRes()
+imp_res::MyCustomer* imp_res::TableList::findRes()
 {
 	int maxRes = 0;
-	customer* maxResCustomer = nullptr;
+	MyCustomer* maxResCustomer = nullptr;
 	if (head == nullptr)
 	{
 		return maxResCustomer;
 	}
 	else
 	{
-		customer* iterate = currentX->next;
+		MyCustomer* iterate = currentX->next;
 		do
 		{
 			if (abs(currentX->energy - iterate->energy) > maxRes)
@@ -248,7 +264,7 @@ void imp_res::TableList::traverse(int num)
 	}
 	else if (num > 0)
 	{
-		customer* iterate = currentX;
+		MyCustomer* iterate = currentX;
 		do
 		{
 			//cout << iterate->name << " " << iterate->energy << endl;
@@ -259,7 +275,7 @@ void imp_res::TableList::traverse(int num)
 	else if (num < 0)
 	{
 		int index = 0;
-		customer* iterate = currentX;
+		MyCustomer* iterate = currentX;
 		do
 		{
 			//cout << iterate->name << " " << iterate->energy << endl;
@@ -275,8 +291,8 @@ void imp_res::TableList::reverse()
 	{
 		return;
 	}
-	customer* iterate1 = currentX;
-	customer* iterate2 = currentX->next;
+	MyCustomer* iterate1 = currentX;
+	MyCustomer* iterate2 = currentX->next;
 	int index1 = 0;
 	int index2 = count - 1;
 	int countSwapped = 0;
@@ -289,7 +305,7 @@ void imp_res::TableList::reverse()
 			/* iterate1 chạy theo hướng ngược chiều kim
 			* tìm khách + kế tiếp
 			*/
-			iterate1->print();
+			//iterate1->print();
 			iterate1 = iterate1->prev;
 			index1++;
 		}
@@ -298,7 +314,7 @@ void imp_res::TableList::reverse()
 			/* iterate2 chạy theo hướng cùng chiều kim
 			* tìm khách - kế tiếp
 			*/
-			iterate2->print();
+			//iterate2->print();
 			iterate2 = iterate2->next;
 			index2--;
 		}
@@ -320,7 +336,7 @@ void imp_res::TableList::reverse()
 			/* iterate1 chạy theo hướng ngược chiều kim
 			* tìm khách + kế tiếp
 			*/
-			iterate1->print();
+			//iterate1->print();
 			iterate1 = iterate1->prev;
 			index1++;
 		}
@@ -329,7 +345,7 @@ void imp_res::TableList::reverse()
 			/* iterate2 chạy theo hướng cùng chiều kim
 			* tìm khách - kế tiếp
 			*/
-			iterate2->print();
+			//iterate2->print();
 			iterate2 = iterate2->next;
 			index2--;
 		}
@@ -344,53 +360,70 @@ void imp_res::TableList::reverse()
 	} while (index1 < index2);
 }
 
-bool imp_res::TableList::swap(customer* a, customer* b)
+bool imp_res::TableList::swap(MyCustomer* a, MyCustomer* b)
 {
-	customer* backup_a = a;
-	customer* backup_b = b;
-	// swap two nodes in a circular doubly linked list
-	if (a == nullptr || b == nullptr || a == b)
-		return false;
-	if (a->next == b) // a kề với b
-	{
-		//a->next = b->next;
-		//b->prev = a->prev;
-		//a->prev = b;
-		//b->next = a;
-		customer* a_prev = a->prev;
-		customer* b_next = b->next;
-		a->next = nullptr;
-		a->prev = nullptr;
-		b->next = nullptr;
-		b->prev = nullptr;
-		a_prev->next = nullptr;
-		b_next->prev = nullptr;
-		a_prev->next = b;
-		b_next->prev = a;
-		a->next = b_next;
-		a->prev = b;
-		b->next = a;
-		b->prev = a_prev;
-	}
-	else // a không kề b
-	{
-		customer* temp = a->next;
-		a->next = b->next;
-		b->next = temp;
-		temp = a->prev;
-		a->prev = b->prev;
-		b->prev = temp;
-	}
-	//if (a->prev != nullptr)
+	//MyCustomer* backup_a = a;
+	//MyCustomer* backup_b = b;
+	//// swap two nodes in a circular doubly linked list
+	//if (a == nullptr || b == nullptr || a == b)
+	//	return false;
+	//if (a->next == b) // a kề với b
 	//{
-	//	a->prev->next = b;
+	//	//a->next = b->next;
+	//	//b->prev = a->prev;
+	//	//a->prev = b;
+	//	//b->next = a;
+	//	MyCustomer* a_prev = a->prev;
+	//	MyCustomer* b_next = b->next;
+	//	a->next = nullptr;
+	//	a->prev = nullptr;
+	//	b->next = nullptr;
+	//	b->prev = nullptr;
+	//	a_prev->next = nullptr;
+	//	b_next->prev = nullptr;
+	//	a_prev->next = b;
+	//	b_next->prev = a;
+	//	a->next = b_next;
+	//	a->prev = b;
+	//	b->next = a;
+	//	b->prev = a_prev;
 	//}
-	//if (b->next != nullptr)
+	//else // a không kề b
 	//{
-	//	b->next->prev = a;
+	//	MyCustomer* temp = a->next;
+	//	a->next = b->next;
+	//	b->next = temp;
+	//	temp = a->prev;
+	//	a->prev = b->prev;
+	//	b->prev = temp;
 	//}
-	//a = backup_a;
-	//b = backup_b;
+	////if (a->prev != nullptr)
+	////{
+	////	a->prev->next = b;
+	////}
+	////if (b->next != nullptr)
+	////{
+	////	b->next->prev = a;
+	////}
+	////a = backup_a;
+	////b = backup_b;
+
+	MyCustomer* backup_x;
+	bool isbackup_x = true;
+	if (currentX == a)
+	{
+		backup_x = a;
+	}
+	else if (currentX == b)
+	{
+		backup_x = b;
+	}
+
+	SupportClass<int>::swapData(a->energy, b->energy);
+	SupportClass<string>::swapData(a->name, b->name);
+	CustomerTimeNode::swap(a->timeNode, b->timeNode);
+	SupportClass<CustomerTimeNode*>::swapData(a->timeNode, b->timeNode);
+
 	return true;
 }
 
@@ -408,7 +441,7 @@ imp_res::CustomerTimeList::CustomerTimeList()
 	head = nullptr;
 }
 
-void imp_res::CustomerTimeList::addCustomerTime(customer* newCustomer)
+void imp_res::CustomerTimeList::addCustomerTime(MyCustomer* newCustomer)
 {
 	if (newCustomer == nullptr)
 		return;
@@ -426,28 +459,36 @@ void imp_res::CustomerTimeList::addCustomerTime(customer* newCustomer)
 		}
 		current->next = newNode;
 	}
+	newCustomer->timeNode = newNode; // set timeNode for newCustomer
 }
 
-// customerTimeNode implementation
+// MyCustomerTimeNode implementation
 
-imp_res::CustomerTimeList::CustomerTimeNode::CustomerTimeNode()
+imp_res::CustomerTimeNode::CustomerTimeNode()
 {
-	this->customerData = nullptr;
+	this->MyCustomerData = nullptr;
 	this->next = nullptr;
 }
 
-imp_res::CustomerTimeList::CustomerTimeNode::CustomerTimeNode(customer* const newCustomer, CustomerTimeNode* nextPtr)
+imp_res::CustomerTimeNode::CustomerTimeNode(MyCustomer* const newCustomer, CustomerTimeNode* nextPtr)
 {
-	// customer* const newCustomer means that the pointer is constant, but the data it points to is not constant
-	this->customerData = newCustomer;
+	// MyCustomer* const newCustomer means that the pointer is constant, but the data it points to is not constant
+	this->MyCustomerData = newCustomer;
 	this->next = nextPtr;
+}
+
+void imp_res::CustomerTimeNode::swap(CustomerTimeNode* a, CustomerTimeNode* b)
+{
+	MyCustomer* temp = a->MyCustomerData;
+	a->MyCustomerData = b->MyCustomerData;
+	b->MyCustomerData = temp;
 }
 
 // / WaitingQueue implementation
 
-imp_res::WaitingQueue::WaitingQueueNode::WaitingQueueNode(customer* customerData = nullptr, WaitingQueueNode* next = nullptr)
+imp_res::WaitingQueue::WaitingQueueNode::WaitingQueueNode(MyCustomer* MyCustomerData = nullptr, WaitingQueueNode* next = nullptr)
 {
-	this->customerData = customerData;
+	this->MyCustomerData = MyCustomerData;
 	this->next = next;
 }
 
@@ -458,7 +499,7 @@ imp_res::WaitingQueue::WaitingQueue()
 	count = 0;
 }
 
-void imp_res::WaitingQueue::addCustomerToQueue(customer* newCustomer)
+void imp_res::WaitingQueue::addCustomerToQueue(MyCustomer* newCustomer)
 {
 	if (newCustomer == nullptr)
 		return;
@@ -506,7 +547,7 @@ void imp_res::WaitingQueue::traverse()
 		WaitingQueueNode* iterate = head;
 		do
 		{
-			iterate->customerData->print();
+			iterate->MyCustomerData->print();
 			iterate = iterate->next;
 		} while (iterate != nullptr);
 	}
@@ -519,5 +560,35 @@ int imp_res::WaitingQueue::operator[](int index)
 	{
 		iterate = iterate->next;
 	}
-	return iterate->customerData->energy;
+	return iterate->MyCustomerData->energy;
+}
+
+imp_res::MyCustomer::MyCustomer()
+{
+	this->name = "";
+	this->energy = 0;
+	this->prev = nullptr;
+	this->next = nullptr;
+}
+
+imp_res::MyCustomer::MyCustomer(string name, int energy, MyCustomer* prev, MyCustomer* next)
+{
+	this->name = name;
+	this->energy = energy;
+	this->prev = prev;
+	this->next = next;
+	this->timeNode = nullptr;
+}
+
+void imp_res::MyCustomer::print()
+{
+	cout << name << " - " << energy << endl;
+}
+
+template<class T>
+void SupportClass<T>::swapData(T& a, T& b)
+{
+	T temp = a;
+	a = b;
+	b = temp;
 }
