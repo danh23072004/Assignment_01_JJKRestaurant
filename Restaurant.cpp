@@ -90,6 +90,7 @@ public:
 		void deleteFirstCustomer();
 		void deleteSpecificCustomer(CustomerTimeNode*);
 		void addCustomerTime(MyCustomer*);
+		/*void findCurrentIndex(MyCustomer*);*/
 	};
 	class WaitingQueue
 	{
@@ -111,19 +112,23 @@ public:
 	public:
 		WaitingQueue();
 		WaitingQueueNode* getFirstCustomer();
+		WaitingQueueNode* getCustomer(int);
 		void deleteFirstCustomer();
 		void deleteSpecificCustomer(WaitingQueueNode*);
 		void addCustomerToQueue(MyCustomer*);
-
 		//WaitingQueueNode* findCustomerInQueue(MyCustomer*);
 		void deleteOneTypeOfCustomers(CustomerTimeList&, PrintStack&, bool);
+		bool comparison(WaitingQueueNode* a, WaitingQueueNode* b);
 		int calculateEnergyOfWizard();
 		int calculateEnergyOfSpirit();
+		int findMaxEnergy();
+		int shellSort(int);
+		int insertSionSort(int, int, int);
 		bool isFull();
+		bool isDuplicate(const MyCustomer&);
 		void changeCount(bool);
 		void traverse();
 		int getCount();
-		int operator[](int);
 	};
 
 private:
@@ -152,6 +157,9 @@ public:
 	void PURPLE()
 	{
 		cout << "purple"<< endl;
+		int size = waitingQueue.findMaxEnergy();
+		int countSwap = waitingQueue.shellSort(size);
+		BLUE(countSwap % MAXSIZE);
 	}
 	void REVERSAL()
 	{
@@ -745,6 +753,10 @@ void imp_res::CustomerTimeList::addCustomerTime(MyCustomer* newCustomer)
 	count++;
 }
 
+//void imp_res::CustomerTimeList::findCurrentIndex(MyCustomer*)
+//{
+//}
+
 // MyCustomerTimeNode implementation
 
 imp_res::CustomerTimeNode::CustomerTimeNode()
@@ -791,6 +803,20 @@ imp_res::WaitingQueue::WaitingQueueNode* imp_res::WaitingQueue::getFirstCustomer
 	return head;
 }
 
+imp_res::WaitingQueue::WaitingQueueNode* imp_res::WaitingQueue::getCustomer(int index)
+{
+	if (index < 0 || index >= count)
+	{
+		return nullptr;
+	}
+	WaitingQueueNode* iterate = head;
+	for (unsigned i = 0; i < index; i++)
+	{
+		iterate = iterate->next;
+	}
+	return iterate;
+}
+
 void imp_res::WaitingQueue::deleteFirstCustomer()
 {
 	WaitingQueueNode* deleteCustomer = head;
@@ -824,7 +850,7 @@ void imp_res::WaitingQueue::deleteSpecificCustomer(WaitingQueueNode* deleteNode)
 
 void imp_res::WaitingQueue::addCustomerToQueue(MyCustomer* newCustomer)
 {
-	if (newCustomer == nullptr)
+	if (newCustomer == nullptr || isDuplicate(*newCustomer) == true)
 		return;
 	WaitingQueueNode* newNode = new WaitingQueueNode(newCustomer, nullptr);
 	if (count < MAXSIZE)
@@ -871,6 +897,37 @@ void imp_res::WaitingQueue::deleteOneTypeOfCustomers(CustomerTimeList& customerT
 	}
 }
 
+bool imp_res::WaitingQueue::comparison(WaitingQueueNode* a, WaitingQueueNode* b)
+{
+	// true means a > b
+	if (abs(a->MyCustomerData->energy) > abs(b->MyCustomerData->energy))
+	{
+		return true;
+	}
+	else if (abs(a->MyCustomerData->energy) < abs(b->MyCustomerData->energy))
+	{
+		return false;
+	}
+	else
+	{
+		CustomerTimeNode* test_a = a->MyCustomerData->timeNode;
+		CustomerTimeNode* test_b = b->MyCustomerData->timeNode;
+		while (test_a != nullptr && test_b != nullptr)
+		{
+			test_a = test_a->next;
+			test_b = test_b->next;
+		}
+		if (test_a != nullptr)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}
+
 int imp_res::WaitingQueue::calculateEnergyOfWizard()
 {
 	// calculate sum of energy of wizard in the waiting queue
@@ -903,9 +960,81 @@ int imp_res::WaitingQueue::calculateEnergyOfSpirit()
 	return -sumEnergy;
 }
 
+int imp_res::WaitingQueue::findMaxEnergy()
+{
+	WaitingQueueNode* max = head, * iterate = head;
+	int size = 0;
+	for (int i = 0; i < this->getCount() ; i++)
+	{
+		if (abs(iterate->MyCustomerData->energy) >= abs(max->MyCustomerData->energy))
+		{
+			max = iterate;
+			size = i + 1;
+		}
+		iterate = iterate->next;
+	}
+	return size;
+}
+
+int imp_res::WaitingQueue::insertSionSort(int start, int size, int gap)
+{
+	int countSwap = 0;
+	for (int i = gap; i < size; i++)
+	{
+		for (int j = i; (j >= gap) && (comparison(getCustomer(j), getCustomer(j - gap))); j -= gap)
+		{
+			WaitingQueueNode* node1 = getCustomer(j);
+			WaitingQueueNode* node2 = getCustomer(j - gap);
+			//SupportClass<WaitingQueueNode>::swapData(*node1, *node2);
+			SupportClass<MyCustomer>::swapData(*node1->MyCustomerData, *node2->MyCustomerData);
+			countSwap++;
+		}
+	}
+	return countSwap;
+}
+
+int imp_res::WaitingQueue::shellSort(int size)
+{
+	if (size == 0)
+	{
+		return 0;
+	}
+	int countSwap = 0;
+	for (int gap = size / 2; gap > 2; gap /= 2)
+	{
+		for (int j = 0; j < gap; j++)
+		{
+			countSwap += insertSionSort(j, size - j, gap);
+		}
+	}
+	countSwap += insertSionSort(0, size, 1);
+	return countSwap;
+}
+
 bool imp_res::WaitingQueue::isFull()
 {
 	return count == MAXSIZE;
+}
+
+bool imp_res::WaitingQueue::isDuplicate(const MyCustomer& newCustomer)
+{
+	if (head == nullptr)
+	{
+		return false;
+	}
+	else
+	{
+		WaitingQueueNode* iterate = head;
+		do
+		{
+			if (iterate->MyCustomerData->name == newCustomer.name)
+			{
+				return true;
+			}
+			iterate = iterate->next;
+		} while (iterate != nullptr);
+	}
+	return false;
 }
 
 void imp_res::WaitingQueue::changeCount(bool check)
@@ -940,16 +1069,6 @@ void imp_res::WaitingQueue::traverse()
 int imp_res::WaitingQueue::getCount()
 {
 	return count;
-}
-
-int imp_res::WaitingQueue::operator[](int index)
-{
-	WaitingQueueNode* iterate = head;
-	for (int i = 0; i < index; i++)
-	{
-		iterate = iterate->next;
-	}
-	return iterate->MyCustomerData->energy;
 }
 
 imp_res::MyCustomer::MyCustomer() : customer()
