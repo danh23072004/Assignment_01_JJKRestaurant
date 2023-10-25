@@ -18,6 +18,7 @@ public:
 	public:
 		MyCustomer();
 		MyCustomer(string name, int energy, MyCustomer* prev, MyCustomer* next);
+		~MyCustomer();
 		//string name;
 		//int energy;
 		MyCustomer* prev;
@@ -33,6 +34,16 @@ public:
 		CustomerTimeNode* next;
 		static void swap(CustomerTimeNode*, CustomerTimeNode*);
 	private:
+	};
+	class PrintStack
+	{
+	private:
+		MyCustomer* head;
+	public:
+		PrintStack();
+		~PrintStack();
+		void push(MyCustomer*);
+		void print();
 	};
 	class TableList
 	{
@@ -53,13 +64,16 @@ public:
 		void insertCustomerLeftX(MyCustomer*, MyCustomer*);
 		void insertCustomerRightX(MyCustomer*, MyCustomer*);
 		void deleteCustomerInOrderStepInRes(int, CustomerTimeList&);
+		void deleteOneTypeOfCustomers(CustomerTimeList&, WaitingQueue&, PrintStack& , bool);
+		void deleteSpecificCustomer(MyCustomer*);
+		int calculateEnergyOfWizard(WaitingQueue&);
+		int calculateEnergyOfSpirit(WaitingQueue&);
 		bool isFull();
 
 		//void setCount();
 	private:
 		int count;
 		MyCustomer* currentX;
-		void deleteSpecificCustomer(MyCustomer*);
 	};
 	class CustomerTimeList
 	{
@@ -69,10 +83,12 @@ public:
 	private:
 		CustomerTimeNode* head;
 		CustomerTimeNode* tail;
+		int count;
 	public:
 		CustomerTimeList();
 		CustomerTimeNode* getFirstCustomer();
 		void deleteFirstCustomer();
+		void deleteSpecificCustomer(CustomerTimeNode*);
 		void addCustomerTime(MyCustomer*);
 	};
 	class WaitingQueue
@@ -85,6 +101,7 @@ public:
 		{
 		public:
 			WaitingQueueNode(MyCustomer*, WaitingQueueNode*);
+			~WaitingQueueNode();
 			MyCustomer* MyCustomerData;
 			WaitingQueueNode* next;
 		};
@@ -95,7 +112,13 @@ public:
 		WaitingQueue();
 		WaitingQueueNode* getFirstCustomer();
 		void deleteFirstCustomer();
+		void deleteSpecificCustomer(WaitingQueueNode*);
 		void addCustomerToQueue(MyCustomer*);
+
+		//WaitingQueueNode* findCustomerInQueue(MyCustomer*);
+		void deleteOneTypeOfCustomers(CustomerTimeList&, PrintStack&, bool);
+		int calculateEnergyOfWizard();
+		int calculateEnergyOfSpirit();
 		bool isFull();
 		void changeCount(bool);
 		void traverse();
@@ -114,14 +137,11 @@ public:
 	{
 		cout << name << " " << energy << endl; // to show that the command has been executed
 		MyCustomer* newCust = new MyCustomer(name, energy, nullptr, nullptr);
-		if (table.addCustomer(newCust) == true)
-		{
-			myCustomerTime.addCustomerTime(newCust);
-		}
-		else if (waitingQueue.isFull() == false)
+		if (waitingQueue.isFull() == false && table.addCustomer(newCust) == false)
 		{
 			waitingQueue.addCustomerToQueue(newCust);
 		}
+		myCustomerTime.addCustomerTime(newCust); // chỉ add 1 lần duy nhất ở đây
 	}
 	void BLUE(int num)
 	{
@@ -174,6 +194,9 @@ public:
 	void DOMAIN_EXPANSION()
 	{
 		cout << "domain_expansion" << endl;
+		bool chooseSide = table.calculateEnergyOfWizard(waitingQueue) >= table.calculateEnergyOfSpirit(waitingQueue) ? true : false;
+		PrintStack printStack;
+		table.deleteOneTypeOfCustomers(myCustomerTime, waitingQueue, printStack, chooseSide);
 	}
 	void LIGHT(int num)
 	{
@@ -255,13 +278,6 @@ void imp_res::TableList::addCustomerFromQueue(int count, WaitingQueue& waitingQu
 	{
 		return;
 	}
-	else if (currentX == nullptr)
-	{
-		currentX = waitingQueue.getFirstCustomer()->MyCustomerData;
-		waitingQueue.deleteFirstCustomer();
-		currentX->next = currentX;
-		currentX->prev = currentX;
-	}
 	else
 	{
 		// this is the same as RED
@@ -270,13 +286,15 @@ void imp_res::TableList::addCustomerFromQueue(int count, WaitingQueue& waitingQu
 		{
 			MyCustomer* newCustomer = waitingQueue.getFirstCustomer()->MyCustomerData;
 			waitingQueue.deleteFirstCustomer();
-			if (addCustomer(newCustomer) == true)
+			// Ở đây không cần add vô time list nữa vì ở RED đã thêm vào và chỉ thêm
+			// 1 lần duy nhất ở RED
+			//if (waitingQueue.isFull() == false && addCustomer(newCustomer) == false)
+			//{
+			//	waitingQueue.addCustomerToQueue(newCustomer);
+			//}
+			if (addCustomer(newCustomer) == false)
 			{
-				myCustomerTime.addCustomerTime(newCustomer);
-			}
-			else if (waitingQueue.isFull() == false)
-			{
-				waitingQueue.addCustomerToQueue(newCustomer);
+				break;
 			}
 		}
 	}
@@ -558,8 +576,69 @@ void imp_res::TableList::deleteCustomerInOrderStepInRes(int countDelete, Custome
 		iterate = timeList.getFirstCustomer();
 		deleteSpecificCustomer(iterate->MyCustomerData);
 		timeList.deleteFirstCustomer();
-		count--;
 	}
+}
+
+void imp_res::TableList::deleteOneTypeOfCustomers(CustomerTimeList& customerTimeList, WaitingQueue& waitingQueue, PrintStack& printStack, bool whichSide)
+{
+	// whichSide = true là chú thuật sư, false là oán linh
+	if (currentX == nullptr || count == 0)
+	{
+		return;
+	}
+	int countDeleteFromTable = 0;
+	CustomerTimeNode* iterate = customerTimeList.getFirstCustomer(), * deleteCustomer;
+	int countCheck = this->count;
+	for (unsigned i = 0; i < countCheck; i++)
+	{
+		deleteCustomer = iterate;
+		iterate = iterate->next;
+		if ((deleteCustomer->MyCustomerData->energy > 0 && whichSide == true) || (deleteCustomer->MyCustomerData->energy < 0 && whichSide == false))
+		{
+			MyCustomer* printDeleteCutomer = new MyCustomer(deleteCustomer->MyCustomerData->name, deleteCustomer->MyCustomerData->energy, nullptr, nullptr);
+			printStack.push(printDeleteCutomer);
+			this->deleteSpecificCustomer(deleteCustomer->MyCustomerData); // delete in table
+			customerTimeList.deleteSpecificCustomer(deleteCustomer); // delete in time list
+			countDeleteFromTable++;
+		}
+	}
+	waitingQueue.deleteOneTypeOfCustomers(customerTimeList, printStack, whichSide);
+
+	addCustomerFromQueue(countDeleteFromTable, waitingQueue, customerTimeList);
+	printStack.print();
+
+}
+
+int imp_res::TableList::calculateEnergyOfWizard(WaitingQueue& waitingQueue)
+{
+	int sumEnergy = 0;
+	// calculate sum of energy of wizard in the table of restaurant
+	MyCustomer* iterate = currentX;
+	do
+	{
+		if (iterate->energy > 0)
+		{
+			sumEnergy += iterate->energy;
+		}
+	} while (iterate != currentX);
+
+	return sumEnergy + waitingQueue.calculateEnergyOfWizard();
+}
+
+int imp_res::TableList::calculateEnergyOfSpirit(WaitingQueue& waitingQueue)
+{
+	int sumEnergy = 0;
+	// calculate sum of energy of spirits in the table of restaurant
+	MyCustomer* iterate = currentX;
+	do
+	{
+		if (iterate->energy < 0)
+		{
+			sumEnergy += iterate->energy;
+		}
+	} while (iterate != currentX);
+	// calculate sum of energy of spirits in the waiting queue
+	return -sumEnergy + waitingQueue.calculateEnergyOfSpirit();
 }
 
 bool imp_res::TableList::isFull()
@@ -577,7 +656,6 @@ void imp_res::TableList::deleteSpecificCustomer(MyCustomer* deleteCustomer)
 	{
 		delete currentX;
 		currentX = nullptr;
-		count--;
 	}
 	else
 	{
@@ -593,6 +671,7 @@ void imp_res::TableList::deleteSpecificCustomer(MyCustomer* deleteCustomer)
 		deleteCustomer->next->prev = deleteCustomer->prev;
 		delete deleteCustomer;
 	}
+	count--;
 }
 
 
@@ -608,6 +687,7 @@ imp_res::CustomerTimeList::CustomerTimeList()
 {
 	head = nullptr;
 	tail = nullptr;
+	count = 0;
 }
 
 imp_res::CustomerTimeNode* imp_res::CustomerTimeList::getFirstCustomer()
@@ -620,6 +700,30 @@ void imp_res::CustomerTimeList::deleteFirstCustomer()
 	CustomerTimeNode* deleteCustomer = head;
 	head = head->next;
 	delete deleteCustomer;
+	count--;
+}
+
+void imp_res::CustomerTimeList::deleteSpecificCustomer(CustomerTimeNode* deleteCustomer)
+{
+	if (head == nullptr)
+	{
+		return;
+	}
+	else if (head == deleteCustomer)
+	{
+		deleteFirstCustomer();
+	}
+	else
+	{
+		CustomerTimeNode* iterate = head;
+		while (iterate->next != deleteCustomer)
+		{
+			iterate = iterate->next;
+		}
+		iterate->next = deleteCustomer->next;
+		delete deleteCustomer;
+		count--;
+	}
 }
 
 void imp_res::CustomerTimeList::addCustomerTime(MyCustomer* newCustomer)
@@ -638,6 +742,7 @@ void imp_res::CustomerTimeList::addCustomerTime(MyCustomer* newCustomer)
 		tail = newNode;
 	}
 	newCustomer->timeNode = newNode; // set timeNode for newCustomer
+	count++;
 }
 
 // MyCustomerTimeNode implementation
@@ -671,6 +776,10 @@ imp_res::WaitingQueue::WaitingQueueNode::WaitingQueueNode(MyCustomer* MyCustomer
 	this->next = next;
 }
 
+imp_res::WaitingQueue::WaitingQueueNode::~WaitingQueueNode()
+{
+}
+
 imp_res::WaitingQueue::WaitingQueue()
 {
 	head = nullptr;
@@ -687,6 +796,30 @@ void imp_res::WaitingQueue::deleteFirstCustomer()
 	WaitingQueueNode* deleteCustomer = head;
 	head = head->next;
 	delete deleteCustomer;
+	this->count--;
+}
+
+void imp_res::WaitingQueue::deleteSpecificCustomer(WaitingQueueNode* deleteNode)
+{
+	if (head == nullptr)
+	{
+		return;
+	}
+	else if (head == deleteNode)
+	{
+		deleteFirstCustomer();
+	}
+	else
+	{
+		WaitingQueueNode* iterate = head;
+		while (iterate->next != deleteNode)
+		{
+			iterate = iterate->next;
+		}
+		iterate->next = deleteNode->next;
+		delete deleteNode;
+		this->count--;
+	}
 }
 
 void imp_res::WaitingQueue::addCustomerToQueue(MyCustomer* newCustomer)
@@ -711,6 +844,63 @@ void imp_res::WaitingQueue::addCustomerToQueue(MyCustomer* newCustomer)
 		}
 		count++;
 	}
+}
+
+void imp_res::WaitingQueue::deleteOneTypeOfCustomers(CustomerTimeList& customerTimeList, PrintStack& printStack, bool whichSide)
+{
+	// whichSide = true là chú thuật sư, false là oán linh
+	if (head == nullptr || this->count == 0)
+	{
+		return;
+	}
+	WaitingQueueNode* iterate = head, * deleteCustomer;
+	int countCheck = this->count;
+	for (unsigned i = 0; i < countCheck; i++)
+	{
+		deleteCustomer = iterate;
+		iterate = iterate->next;
+		if ((deleteCustomer->MyCustomerData->energy > 0 && whichSide == true) || (deleteCustomer->MyCustomerData->energy < 0 && whichSide == false))
+		{
+			// this part deletes the customer in the waiting queue
+			MyCustomer* printDeleteCustomer = new MyCustomer(deleteCustomer->MyCustomerData->name, deleteCustomer->MyCustomerData->energy, nullptr, nullptr);
+			printStack.push(printDeleteCustomer);
+			customerTimeList.deleteSpecificCustomer(deleteCustomer->MyCustomerData->timeNode); // delete in time list
+			delete deleteCustomer->MyCustomerData; // không dùng lệnh delete trong table bởi vì node không có prev và nexts
+			this->deleteSpecificCustomer(deleteCustomer); // delete in waiting queue
+		}
+	}
+}
+
+int imp_res::WaitingQueue::calculateEnergyOfWizard()
+{
+	// calculate sum of energy of wizard in the waiting queue
+	int sumEnergy = 0;
+	WaitingQueueNode* iterate = head;
+	while (iterate != nullptr)
+	{
+		if (iterate->MyCustomerData->energy > 0)
+		{
+			sumEnergy += iterate->MyCustomerData->energy;
+		}
+		iterate = iterate->next;
+	}
+	return sumEnergy;
+}
+
+int imp_res::WaitingQueue::calculateEnergyOfSpirit()
+{
+	// calculate sum of energy of spirits in the waiting queue
+	int sumEnergy = 0;
+	WaitingQueueNode* iterate = head;
+	while (iterate != nullptr)
+	{
+		if (iterate->MyCustomerData->energy < 0)
+		{
+			sumEnergy += iterate->MyCustomerData->energy;
+		}
+		iterate = iterate->next;
+	}
+	return -sumEnergy;
 }
 
 bool imp_res::WaitingQueue::isFull()
@@ -780,10 +970,9 @@ imp_res::MyCustomer::MyCustomer(string name, int energy, MyCustomer* prev, MyCus
 	this->timeNode = nullptr;
 }
 
-//void imp_res::MyCustomer::print()
-//{
-//	cout << name << " - " << energy << endl;
-//}
+imp_res::MyCustomer::~MyCustomer()
+{
+}
 
 template<class T>
 void SupportClass<T>::swapData(T& a, T& b)
@@ -791,4 +980,46 @@ void SupportClass<T>::swapData(T& a, T& b)
 	T temp = a;
 	a = b;
 	b = temp;
+}
+
+void imp_res::PrintStack::push(MyCustomer* printCustomer)
+{
+	if (head == nullptr)
+	{
+		head = printCustomer;
+	}
+	else
+	{
+		MyCustomer* temp = head;
+		head = printCustomer;
+		head->next = temp;
+	}
+}
+
+imp_res::PrintStack::PrintStack()
+{
+	head = nullptr;
+}
+
+imp_res::PrintStack::~PrintStack()
+{
+}
+
+void imp_res::PrintStack::print()
+{
+	if (head == nullptr)
+	{
+		return;
+	}
+	else
+	{
+		MyCustomer* deleteCustomer;
+		while (head != nullptr)
+		{
+			head->print();
+			deleteCustomer = head;
+			head = head->next;
+			delete deleteCustomer;
+		}
+	}
 }

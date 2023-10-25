@@ -52,7 +52,7 @@ int main(int argc, char* argv[]) {
     //	return 1;
     //  string fileName = argv[1];
     imp_res* r = new imp_res();
-    string fileName = "test1.txt";
+    string fileName = "test.txt";
     simulate(fileName, r);
     delete r;
     return 0;
