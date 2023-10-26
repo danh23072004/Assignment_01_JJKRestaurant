@@ -50,7 +50,7 @@ public:
 	public:
 		TableList();
 		~TableList();
-		bool addCustomer(MyCustomer*);
+		bool addCustomer(MyCustomer*, bool);
 		void addCustomerFromQueue(int, WaitingQueue&, CustomerTimeList&);
 		int getCount();
 		bool isDuplicate(const MyCustomer&);
@@ -115,7 +115,7 @@ public:
 		WaitingQueueNode* getCustomer(int);
 		void deleteFirstCustomer();
 		void deleteSpecificCustomer(WaitingQueueNode*);
-		void addCustomerToQueue(MyCustomer*);
+		bool addCustomerToQueue(MyCustomer*, bool);
 		//WaitingQueueNode* findCustomerInQueue(MyCustomer*);
 		void deleteOneTypeOfCustomers(CustomerTimeList&, PrintStack&, bool);
 		bool comparison(WaitingQueueNode* a, WaitingQueueNode* b);
@@ -141,20 +141,33 @@ public:
 	void RED(string name, int energy)
 	{
 		countDebug++;
-		//cout << name << " " << energy << endl; // to show that the command has been executed
+		cout << name << " " << energy << endl; // to show that the command has been executed
 		
 		MyCustomer* newCust = new MyCustomer(name, energy, nullptr, nullptr);
-		if (energy == 0 || table.isDuplicate(*newCust) || waitingQueue.isDuplicate(*newCust) == true 
-			&& waitingQueue.isFull() == false)
+		//if (energy == 0 || table.isDuplicate(*newCust) || waitingQueue.isDuplicate(*newCust) == true 
+		//	&& waitingQueue.isFull() == false)
+		//{
+		//	delete newCust;
+		//	return;
+		//}
+		bool duplicateInTable = table.isDuplicate(*newCust);
+		if (table.addCustomer(newCust, duplicateInTable) == true)
+		{
+			myCustomerTime.addCustomerTime(newCust);
+		}
+		else if (waitingQueue.addCustomerToQueue(newCust, duplicateInTable) == true)
+		{
+			myCustomerTime.addCustomerTime(newCust);
+		}
+		else
 		{
 			delete newCust;
-			return;
 		}
-		if (waitingQueue.isFull() == false && table.addCustomer(newCust) == false)
-		{
-			waitingQueue.addCustomerToQueue(newCust);
-		}
-		myCustomerTime.addCustomerTime(newCust); // chỉ add 1 lần duy nhất ở đây
+		//if (waitingQueue.isFull() == false && table.addCustomer(newCust) == false)
+		//{
+		//	waitingQueue.addCustomerToQueue(newCust);
+		//}
+		//myCustomerTime.addCustomerTime(newCust); // chỉ add 1 lần duy nhất ở đây
 	}
 	void BLUE(int num)
 	{
@@ -215,9 +228,12 @@ public:
 	{
 		countDebug++;
 		//cout << "domain_expansion" << endl;
-		bool chooseSide = table.calculateEnergyOfWizard(waitingQueue) >= table.calculateEnergyOfSpirit(waitingQueue) ? true : false;
-		PrintStack printStack;
-		table.deleteOneTypeOfCustomers(myCustomerTime, waitingQueue, printStack, chooseSide);
+		if (table.getCurrentX() != nullptr)
+		{
+			bool chooseSide = table.calculateEnergyOfWizard(waitingQueue) >= table.calculateEnergyOfSpirit(waitingQueue) ? true : false;
+			PrintStack printStack;
+			table.deleteOneTypeOfCustomers(myCustomerTime, waitingQueue, printStack, chooseSide);
+		}
 	}
 	void LIGHT(int num)
 	{
@@ -246,11 +262,11 @@ imp_res::TableList::~TableList()
 {
 }
 
-bool imp_res::TableList::addCustomer(MyCustomer* newCustomer)
+bool imp_res::TableList::addCustomer(MyCustomer* newCustomer, bool isDuplicateInTable)
 {
 	// circular doubly linked list
 	MyCustomer* newCust;
-	if (newCustomer->energy == 0 || isDuplicate(*newCustomer) == true || isFull() == true)
+	if (newCustomer->energy == 0 || isDuplicateInTable == true || isFull() == true)
 		return false;
 	if (currentX == nullptr && count < MAXSIZE)
 	{
@@ -314,7 +330,8 @@ void imp_res::TableList::addCustomerFromQueue(int count, WaitingQueue& waitingQu
 			//{
 			//	waitingQueue.addCustomerToQueue(newCustomer);
 			//}
-			if (addCustomer(newCustomer) == false)
+			// điều kiện checkDuplicate trong đây là true sẵn vì đã check trùng lặp trước khi add vào queue
+			if (addCustomer(newCustomer, false) == false)
 			{
 				break;
 			}
@@ -617,7 +634,7 @@ void imp_res::TableList::deleteCustomerInOrderStepInRes(int countDelete, Custome
 
 void imp_res::TableList::deleteOneTypeOfCustomers(CustomerTimeList& customerTimeList, WaitingQueue& waitingQueue, PrintStack& printStack, bool whichSide)
 {
-	// whichSide = true là chú thuật sư, false là oán linh
+	// whichSide = true là xóa oán linh, false là xóa chú thuật sư
 	if (currentX == nullptr || count == 0)
 	{
 		return;
@@ -629,7 +646,7 @@ void imp_res::TableList::deleteOneTypeOfCustomers(CustomerTimeList& customerTime
 	{
 		deleteCustomer = iterate;
 		iterate = iterate->next;
-		if ((deleteCustomer->MyCustomerData->energy > 0 && whichSide == true) || (deleteCustomer->MyCustomerData->energy < 0 && whichSide == false))
+		if ((deleteCustomer->MyCustomerData->energy < 0 && whichSide == true) || (deleteCustomer->MyCustomerData->energy > 0 && whichSide == false))
 		{
 			MyCustomer* printDeleteCutomer = new MyCustomer(deleteCustomer->MyCustomerData->name, deleteCustomer->MyCustomerData->energy, nullptr, nullptr);
 			printStack.push(printDeleteCutomer);
@@ -649,6 +666,10 @@ int imp_res::TableList::calculateEnergyOfWizard(WaitingQueue& waitingQueue)
 {
 	int sumEnergy = 0;
 	// calculate sum of energy of wizard in the table of restaurant
+	if (currentX == nullptr)
+	{
+		return 0;
+	}
 	MyCustomer* iterate = currentX;
 	do
 	{
@@ -656,6 +677,7 @@ int imp_res::TableList::calculateEnergyOfWizard(WaitingQueue& waitingQueue)
 		{
 			sumEnergy += iterate->energy;
 		}
+		iterate = iterate->next;
 	} while (iterate != currentX);
 
 	return sumEnergy + waitingQueue.calculateEnergyOfWizard();
@@ -663,6 +685,10 @@ int imp_res::TableList::calculateEnergyOfWizard(WaitingQueue& waitingQueue)
 
 int imp_res::TableList::calculateEnergyOfSpirit(WaitingQueue& waitingQueue)
 {
+	if (currentX == nullptr)
+	{
+		return 0;
+	}
 	int sumEnergy = 0;
 	// calculate sum of energy of spirits in the table of restaurant
 	MyCustomer* iterate = currentX;
@@ -672,6 +698,7 @@ int imp_res::TableList::calculateEnergyOfSpirit(WaitingQueue& waitingQueue)
 		{
 			sumEnergy += iterate->energy;
 		}
+		iterate = iterate->next;
 	} while (iterate != currentX);
 	// calculate sum of energy of spirits in the waiting queue
 	return -sumEnergy + waitingQueue.calculateEnergyOfSpirit();
@@ -755,6 +782,10 @@ void imp_res::CustomerTimeList::deleteSpecificCustomer(CustomerTimeNode* deleteC
 		while (iterate->next != deleteCustomer)
 		{
 			iterate = iterate->next;
+		}
+		if (iterate->next == tail)
+		{
+			tail = iterate;
 		}
 		iterate->next = deleteCustomer->next;
 		delete deleteCustomer;
@@ -876,10 +907,11 @@ void imp_res::WaitingQueue::deleteSpecificCustomer(WaitingQueueNode* deleteNode)
 	}
 }
 
-void imp_res::WaitingQueue::addCustomerToQueue(MyCustomer* newCustomer)
+bool imp_res::WaitingQueue::addCustomerToQueue(MyCustomer* newCustomer, bool isDuplcateInTable)
 {
-	if (newCustomer == nullptr || isDuplicate(*newCustomer) == true || newCustomer->energy == 0)
-		return;
+	if (newCustomer == nullptr || newCustomer->energy == 0 || isFull() == true 
+		|| isDuplicate(*newCustomer) == true || isDuplcateInTable == true)
+		return false;
 	WaitingQueueNode* newNode = new WaitingQueueNode(newCustomer, nullptr);
 	if (count < MAXSIZE)
 	{
@@ -898,6 +930,7 @@ void imp_res::WaitingQueue::addCustomerToQueue(MyCustomer* newCustomer)
 		}
 		count++;
 	}
+	return true;
 }
 
 void imp_res::WaitingQueue::deleteOneTypeOfCustomers(CustomerTimeList& customerTimeList, PrintStack& printStack, bool whichSide)
@@ -913,7 +946,7 @@ void imp_res::WaitingQueue::deleteOneTypeOfCustomers(CustomerTimeList& customerT
 	{
 		deleteCustomer = iterate;
 		iterate = iterate->next;
-		if ((deleteCustomer->MyCustomerData->energy > 0 && whichSide == true) || (deleteCustomer->MyCustomerData->energy < 0 && whichSide == false))
+		if ((deleteCustomer->MyCustomerData->energy < 0 && whichSide == true) || (deleteCustomer->MyCustomerData->energy > 0 && whichSide == false))
 		{
 			// this part deletes the customer in the waiting queue
 			MyCustomer* printDeleteCustomer = new MyCustomer(deleteCustomer->MyCustomerData->name, deleteCustomer->MyCustomerData->energy, nullptr, nullptr);
