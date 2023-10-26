@@ -80,49 +80,49 @@ jt-9
 um-9
 vm-6
 LIGHT -1 line 39
-em--7
-vm-6
-xs--4
-bz--9
 yi--7
 um-9
 jt-9
 uv-7
 kb-7
+em--7
+vm-6
+xs--4
+bz--9
 LIGHT -1 line 41
 fk--9
-vm-6
-xs--4
-bz--9
-yi--7
 um-9
 jt-9
 uv-7
 kb-7
 em--7
+vm-6
+xs--4
+bz--9
+yi--7
 LIGHT 1 line 43
 fc-8
+yi--7
+bz--9
+xs--4
+vm-6
 em--7
 kb-7
 uv-7
 jt-9
 um-9
-yi--7
-bz--9
-xs--4
-vm-6
 fk--9
 LIGHT 1 line 45
 cy-8
+yi--7
+bz--9
+xs--4
+vm-6
 em--7
 kb-7
 uv-7
 jt-9
 um-9
-yi--7
-bz--9
-xs--4
-vm-6
 fk--9
 fc-8
 LIGHT 0 line 47
@@ -130,53 +130,53 @@ LIGHT 1 line 49
 yi--7
 eu-8
 vm-6
-fk--9
-fc-8
-cy-8
 kb-7
 jt-9
 um-9
+fk--9
+fc-8
+cy-8
 LIGHT -1 line 51
 yi--7
+kb-7
 jt-9
 um-9
+fc-8
+cy-8
 fk--9
 eu-8
 vm-6
-fc-8
-cy-8
-kb-7
 LIGHT 0 line 53
 LIGHT 1 line 55
-fk--9
-eu-8
 fc-8
+fk--9
 cy-8
+eu-8
 LIGHT 1 line 57
-fk--9
-cy-8
 fc-8
 eu-8
+cy-8
+fk--9
 LIGHT 1 line 59
 rk-7
-cy-8
 fc-8
 eu-8
+cy-8
 fk--9
 LIGHT -1 line 61
 eo-1
 fk--9
+cy-8
 eu-8
 fc-8
-cy-8
 rk-7
 LIGHT -1 line 63
 rm-7
 eo-1
 fk--9
+cy-8
 eu-8
 fc-8
-cy-8
 rk-7
 LIGHT 0 line 65
 LIGHT 1 line 67
@@ -184,9 +184,9 @@ hm--5
 wb-6
 rm-7
 rk-7
-cy-8
 fc-8
 eu-8
+cy-8
 fk--9
 eo-1
 LIGHT 0 line 69
@@ -195,9 +195,9 @@ lg-3
 hm--5
 eo-1
 fk--9
+cy-8
 eu-8
 fc-8
-cy-8
 rk-7
 rm-7
 wb-6
@@ -206,9 +206,9 @@ lg-3
 hm--5
 eo-1
 fk--9
+cy-8
 eu-8
 fc-8
-cy-8
 rk-7
 rm-7
 wb-6
@@ -218,38 +218,38 @@ lg-3
 wb-6
 rm-7
 rk-7
-cy-8
 fc-8
 eu-8
+cy-8
 fk--9
 eo-1
 hm--5
 LIGHT 0 line 77
 LIGHT 1 line 79
-eo-1
 cf-1
 lg-3
 wb-6
 rm-7
 rk-7
-cy-8
-fk--9
 fc-8
-hm--5
+fk--9
 eu-8
+hm--5
+cy-8
+eo-1
 LIGHT 1 line 81
 bu--4
-eo-1
 cf-1
 lg-3
 wb-6
 rm-7
 rk-7
-cy-8
-fk--9
 fc-8
-hm--5
+fk--9
 eu-8
+hm--5
+cy-8
+eo-1
 LIGHT -1 line 83
 LIGHT -1 line 85
 zk-8
@@ -1133,7 +1133,6 @@ ek-5
 jq-2
 qs-4
 LIGHT 1 line 209
-be-6
 ic-6
 lp-7
 bv-6
@@ -1158,8 +1157,8 @@ wl-6
 zp-4
 dx-4
 bj--6
+be-6
 LIGHT 1 line 211
-be-6
 ic-6
 lp-7
 bv-6
@@ -1184,6 +1183,7 @@ wl-6
 zp-4
 dx-4
 bj--6
+be-6
 LIGHT 0 line 213
 LIGHT -1 line 215
 kv--1

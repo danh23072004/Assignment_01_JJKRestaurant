@@ -5,6 +5,7 @@ void simulate(string filename, imp_res* r)
 {
     ifstream ss(filename);
     string str, maxsize, name, energy, num;
+    int debugLine = 1;
     while (ss >> str)
     {
         if (str == "MAXSIZE")
@@ -44,6 +45,7 @@ void simulate(string filename, imp_res* r)
             ss >> num;
             r->LIGHT(stoi(num));
         }
+        debugLine++;
     }
 }
 

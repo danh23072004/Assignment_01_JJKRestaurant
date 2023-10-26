@@ -140,7 +140,6 @@ public:
 	int countDebug = 0;
 	void RED(string name, int energy)
 	{
-		countDebug++;
 		cout << name << " " << energy << endl; // to show that the command has been executed
 		
 		MyCustomer* newCust = new MyCustomer(name, energy, nullptr, nullptr);
@@ -171,14 +170,12 @@ public:
 	}
 	void BLUE(int num)
 	{
-		countDebug++;
 		//cout << "blue "<< num << endl;
 		table.deleteCustomerInOrderStepInRes(num, myCustomerTime);
 		table.addCustomerFromQueue(num, waitingQueue, myCustomerTime);
 	}
 	void PURPLE()
 	{
-		countDebug++;
 		//cout << "purple"<< endl;
 		int size = waitingQueue.findMaxEnergy();
 		int countSwap = waitingQueue.shellSort(size);
@@ -186,14 +183,12 @@ public:
 	}
 	void REVERSAL()
 	{
-		countDebug++;
 		//cout << "reversal" << endl;
 		table.reverse();
 	}
 	void UNLIMITED_VOID()
 	{
-		countDebug++;
-		//cout << "unlimited_void" << endl;
+		cout << "unlimited_void" << endl;
 		if (table.getCount() <= 3)
 		{
 			return;
@@ -226,7 +221,6 @@ public:
 	}
 	void DOMAIN_EXPANSION()
 	{
-		countDebug++;
 		//cout << "domain_expansion" << endl;
 		if (table.getCurrentX() != nullptr)
 		{
@@ -237,7 +231,6 @@ public:
 	}
 	void LIGHT(int num)
 	{
-		countDebug++;
 		cout << "light " << num << endl;
 		if (num != 0) // print MyCustomers in the restaurant
 		{
@@ -409,6 +402,7 @@ imp_res::MyCustomer* imp_res::TableList::findMinInsideSublist(MyCustomer* begin,
 		if (temp->energy < minEnergy)
 		{
 			min = temp;
+			minEnergy = temp->energy;
 		}
 		temp = temp->next;
 	}
@@ -472,7 +466,7 @@ void imp_res::TableList::reverse()
 	{
 		return;
 	}
-	int backup_X = currentX->energy;
+	string backup_X = currentX->name;
 	MyCustomer* iterate1 = currentX;
 	MyCustomer* iterate2 = currentX->next;
 	int index1 = 0;
@@ -550,7 +544,7 @@ void imp_res::TableList::reverse()
 	iterate1 = currentX;
 	for (int i = 0; i < this->count; i++)
 	{
-		if (iterate1->energy == backup_X)
+		if (iterate1->name == backup_X)
 		{
 			currentX = iterate1;
 			break;

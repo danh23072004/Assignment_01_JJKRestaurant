@@ -5668,14 +5668,14 @@ em--6
 uo--6
 ik-3
 LIGHT 1 line 529
+em--6
 uo--6
 ik-3
-em--6
 LIGHT 1 line 531
 ve--1
+uo--6
 ik-3
 em--6
-uo--6
 LIGHT 1 line 533
 LIGHT -1 line 535
 mr-7

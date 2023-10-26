@@ -21,58 +21,58 @@ yd-8
 mv--1
 rk-2
 LIGHT -1 line 23
-mv--1
-rk-2
 ap--1
 yd-8
+mv--1
+rk-2
 LIGHT 1 line 25
 io--9
-mv--1
-yd-8
 ap--1
 rk-2
+mv--1
+yd-8
 LIGHT -1 line 27
 ks-4
 io--9
-rk-2
-ap--1
 yd-8
 mv--1
+rk-2
+ap--1
 LIGHT 1 line 29
 uf--6
 yd-8
-ap--1
-rk-2
 io--9
 ks-4
+ap--1
+rk-2
 mv--1
 LIGHT 1 line 31
 mh-4
 ks-4
+ap--1
+rk-2
 mv--1
 uf--6
 yd-8
-ap--1
-rk-2
 io--9
 LIGHT 1 line 33
 fp-9
 mh-4
 ks-4
+ap--1
+rk-2
 mv--1
 uf--6
 yd-8
-ap--1
-rk-2
 io--9
 LIGHT -1 line 35
 vd-5
 io--9
-rk-2
-ap--1
 yd-8
 uf--6
 mv--1
+rk-2
+ap--1
 ks-4
 mh-4
 fp-9
@@ -80,114 +80,114 @@ LIGHT 0 line 37
 th-1
 LIGHT 1 line 39
 vd-5
-rk-2
 yd-8
+rk-2
 io--9
-ap--1
 ks-4
 uf--6
-mh-4
 mv--1
+mh-4
+ap--1
 fp-9
 LIGHT -1 line 41
 vd-5
 fp-9
-mv--1
+ap--1
 mh-4
+mv--1
 uf--6
 ks-4
-ap--1
 io--9
-yd-8
 rk-2
+yd-8
 LIGHT -1 line 43
 vd-5
 fp-9
-mv--1
+ap--1
 mh-4
+mv--1
 uf--6
 ks-4
-ap--1
 io--9
-yd-8
 rk-2
+yd-8
 LIGHT -1 line 45
 vd-5
 fp-9
-mv--1
+ap--1
 mh-4
+mv--1
 uf--6
 ks-4
-ap--1
 io--9
-yd-8
 rk-2
+yd-8
 LIGHT 1 line 47
 vd-5
-rk-2
 yd-8
+rk-2
 io--9
-ap--1
 ks-4
 uf--6
-mh-4
 mv--1
+mh-4
+ap--1
 fp-9
 LIGHT -1 line 49
 vd-5
 fp-9
-mv--1
+ap--1
 mh-4
+mv--1
 uf--6
 ks-4
-ap--1
 io--9
-yd-8
 rk-2
+yd-8
 LIGHT -1 line 51
 vd-5
 fp-9
-mv--1
+ap--1
 mh-4
+mv--1
 uf--6
 ks-4
-ap--1
 io--9
-yd-8
 rk-2
+yd-8
 LIGHT 1 line 53
 vd-5
-rk-2
 yd-8
+rk-2
 io--9
-ap--1
 ks-4
 uf--6
-mh-4
 mv--1
+mh-4
+ap--1
 fp-9
 LIGHT -1 line 55
 th-1
 io--9
-yd-8
 rk-2
+yd-8
 vd-5
 fp-9
+ap--1
 mh-4
 uf--6
 ks-4
-ap--1
 LIGHT -1 line 57
 th-1
 io--9
-yd-8
 rk-2
+yd-8
 vd-5
 fp-9
+ap--1
 mh-4
 uf--6
 ks-4
-ap--1
 LIGHT 0 line 59
 tf-5
 ty--1
@@ -199,80 +199,80 @@ jv-9
 hl-1
 LIGHT 1 line 61
 th-1
-ap--1
 ks-4
 uf--6
 mh-4
+ap--1
 fp-9
 vd-5
-rk-2
 yd-8
+rk-2
 io--9
 LIGHT 1 line 63
 th-1
-ap--1
 ks-4
 uf--6
 mh-4
+ap--1
 fp-9
 vd-5
-rk-2
 yd-8
+rk-2
 io--9
 LIGHT 1 line 65
 th-1
-ap--1
 ks-4
 uf--6
 mh-4
+ap--1
 fp-9
 vd-5
-rk-2
 yd-8
+rk-2
 io--9
 LIGHT 1 line 67
 th-1
-ap--1
 ks-4
 uf--6
 mh-4
+ap--1
 fp-9
 vd-5
-rk-2
 yd-8
+rk-2
 io--9
 LIGHT 1 line 69
 th-1
-ap--1
 ks-4
 uf--6
 mh-4
+ap--1
 fp-9
 vd-5
-rk-2
 yd-8
+rk-2
 io--9
 LIGHT 1 line 71
 th-1
-ap--1
 ks-4
 uf--6
 mh-4
+ap--1
 fp-9
 vd-5
-rk-2
 yd-8
+rk-2
 io--9
 LIGHT 1 line 73
 th-1
-ap--1
 ks-4
 uf--6
 mh-4
+ap--1
 fp-9
 vd-5
-rk-2
 yd-8
+rk-2
 io--9
 LIGHT 1 line 75
 eo--4
@@ -1959,7 +1959,6 @@ fs-7
 yy--8
 yl-2
 LIGHT 1 line 425
-np-6
 jj-6
 yl-2
 yy--8
@@ -1969,8 +1968,8 @@ jf-5
 lw-8
 gc--9
 my-1
+np-6
 LIGHT 1 line 427
-np-6
 jj-6
 yl-2
 yy--8
@@ -1980,7 +1979,9 @@ jf-5
 lw-8
 gc--9
 my-1
+np-6
 LIGHT -1 line 429
+jj-6
 np-6
 my-1
 gc--9
@@ -1990,8 +1991,8 @@ fs-7
 lz--1
 yy--8
 yl-2
-jj-6
 LIGHT -1 line 431
+jj-6
 np-6
 my-1
 gc--9
@@ -2001,8 +2002,8 @@ fs-7
 lz--1
 yy--8
 yl-2
-jj-6
 LIGHT -1 line 433
+jj-6
 np-6
 my-1
 gc--9
@@ -2012,26 +2013,25 @@ fs-7
 lz--1
 yy--8
 yl-2
-jj-6
 LIGHT -1 line 435
 jj-6
 yl-2
-yy--8
 fs-7
 jf-5
+yy--8
 lw-8
-lz--1
-gc--9
 my-1
 np-6
+lz--1
+gc--9
 LIGHT -1 line 437
 kv-1
 gc--9
-my-1
-np-6
 jj-6
 yl-2
 fs-7
+my-1
+np-6
 yk-5
 kb-2
 vl-7
@@ -2065,38 +2065,38 @@ nc-7
 LIGHT 0 line 445
 LIGHT 0 line 447
 LIGHT -1 line 449
+cm--10
+nc-7
+yw-1
+kv-1
 ij--10
 qj--1
 nw--6
 qv--2
 fk--2
 is--10
-cm--10
-nc-7
-yw-1
-kv-1
 LIGHT 1 line 451
-ij--10
-kv-1
-yw-1
-nc-7
 cm--10
 is--10
 fk--2
 qv--2
 nw--6
 qj--1
+ij--10
+kv-1
+yw-1
+nc-7
 LIGHT -1 line 453
+cm--10
+nc-7
+yw-1
+kv-1
 ij--10
 qj--1
 nw--6
 qv--2
 fk--2
 is--10
-cm--10
-nc-7
-yw-1
-kv-1
 LIGHT 0 line 455
 xo--5
 ek-6
@@ -2174,19 +2174,19 @@ um-6
 dt-6
 oh--3
 LIGHT 1 line 493
-dt-6
-gi--10
 in-6
 um-6
 dq--6
 oh--3
+dt-6
+gi--10
 LIGHT -1 line 495
+in-6
+gi--10
 dt-6
 oh--3
 dq--6
 um-6
-in-6
-gi--10
 LIGHT -1 line 497
 ii--1
 gi--10

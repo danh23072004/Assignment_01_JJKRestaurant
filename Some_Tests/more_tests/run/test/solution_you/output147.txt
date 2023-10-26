@@ -225,8 +225,6 @@ og--6
 su-4
 nv--9
 LIGHT 1 line 49
-te--10
-su-4
 pd--10
 wi-1
 nv--9
@@ -241,6 +239,8 @@ qu--8
 pp--3
 jf-8
 jn--1
+te--10
+su-4
 LIGHT 1 line 51
 bh--5
 jf-8

@@ -4321,9 +4321,6 @@ gw--4
 og-6
 aj-1
 LIGHT 1 line 583
-gw--4
-ie-2
-cw-4
 fd--4
 et--5
 sz-8
@@ -4341,6 +4338,9 @@ oj-2
 wh--4
 og-6
 aj-1
+gw--4
+ie-2
+cw-4
 LIGHT -1 line 585
 tb--2
 tj--2

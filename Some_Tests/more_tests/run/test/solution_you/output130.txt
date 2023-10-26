@@ -606,9 +606,6 @@ wo-7
 uy-9
 LIGHT 0 line 169
 LIGHT 1 line 171
-wg-4
-ht--10
-ns--5
 wq-4
 vm-6
 pb-3
@@ -624,6 +621,9 @@ jh--3
 qj--5
 ld--10
 ah--7
+wg-4
+ht--10
+ns--5
 LIGHT -1 line 173
 nr--8
 pb-3
@@ -1384,6 +1384,7 @@ ra--7
 nf-8
 ar--10
 LIGHT -1 line 265
+cc-9
 ui-9
 hc--2
 hf-4
@@ -1403,8 +1404,8 @@ fd--6
 xe--7
 ra--7
 ar--10
-cc-9
 LIGHT -1 line 267
+cc-9
 ui-9
 hc--2
 hf-4
@@ -1424,8 +1425,8 @@ fd--6
 xe--7
 ra--7
 ar--10
-cc-9
 LIGHT -1 line 269
+cc-9
 ui-9
 hc--2
 hf-4
@@ -1445,8 +1446,8 @@ fd--6
 xe--7
 ra--7
 ar--10
-cc-9
 LIGHT -1 line 271
+cc-9
 ui-9
 hc--2
 hf-4
@@ -1466,7 +1467,6 @@ fd--6
 xe--7
 ra--7
 ar--10
-cc-9
 LIGHT 1 line 273
 ug--8
 ui-9
@@ -1949,7 +1949,6 @@ hg-1
 fi-3
 LIGHT 0 line 371
 LIGHT 1 line 373
-ip--1
 tf--1
 wj-1
 hg-1
@@ -1957,8 +1956,10 @@ vl--3
 fi-3
 zz-9
 va-2
+ip--1
 LIGHT -1 line 375
 ul-6
+tf--1
 ip--1
 va-2
 zz-9
@@ -1966,11 +1967,9 @@ fi-3
 vl--3
 hg-1
 wj-1
-tf--1
 LIGHT 1 line 377
 ll--4
 ul-6
-tf--1
 wj-1
 hg-1
 vl--3
@@ -1978,10 +1977,10 @@ fi-3
 zz-9
 va-2
 ip--1
+tf--1
 LIGHT 1 line 379
 bd-8
 ul-6
-tf--1
 wj-1
 hg-1
 vl--3
@@ -1989,10 +1988,12 @@ fi-3
 zz-9
 va-2
 ip--1
+tf--1
 ll--4
 LIGHT -1 line 381
 bd-8
 ll--4
+tf--1
 ip--1
 va-2
 zz-9
@@ -2000,17 +2001,16 @@ fi-3
 vl--3
 hg-1
 wj-1
-tf--1
 ul-6
 LIGHT 1 line 383
 hg-1
 fi-3
 zz-9
 ip--1
+tf--1
 ll--4
 bd-8
 ul-6
-tf--1
 wj-1
 LIGHT 1 line 385
 xo--2
@@ -2018,22 +2018,22 @@ hg-1
 fi-3
 zz-9
 ip--1
+tf--1
 ll--4
 bd-8
 ul-6
-tf--1
 wj-1
 LIGHT 1 line 387
 fo-4
 bd-8
 ul-6
-tf--1
 wj-1
 xo--2
 hg-1
 fi-3
 zz-9
 ip--1
+tf--1
 ll--4
 LIGHT -1 line 389
 at--8
@@ -2041,11 +2041,11 @@ fi-3
 hg-1
 xo--2
 wj-1
-tf--1
 ul-6
 bd-8
 fo-4
 ll--4
+tf--1
 ip--1
 zz-9
 LIGHT 0 line 391
@@ -2054,11 +2054,11 @@ LIGHT 1 line 395
 ws-1
 zz-9
 ip--1
+tf--1
 ll--4
 fo-4
 bd-8
 ul-6
-tf--1
 wj-1
 xo--2
 hg-1
@@ -2942,6 +2942,7 @@ xu-2
 mr--3
 cm--3
 LIGHT -1 line 559
+pq--3
 cm--3
 xu-2
 vk-7
@@ -2961,7 +2962,6 @@ sh-9
 ds-2
 dg-3
 ug--4
-pq--3
 LIGHT 0 line 561
 gn--1
 or--4
@@ -2978,13 +2978,7 @@ zj-2
 ho-5
 jx-8
 LIGHT 1 line 563
-cm--3
 pq--3
-ug--4
-dg-3
-ds-2
-sh-9
-ob--4
 rg-8
 ej-3
 qk-6
@@ -2993,18 +2987,30 @@ nr-6
 bh-2
 uu-2
 oj-6
+ug--4
+ob--4
 fo--5
-og--9
-mr--3
 vk-7
 xu-2
+og--9
+mr--3
+cm--3
+dg-3
+ds-2
+sh-9
 LIGHT -1 line 565
+pq--3
+sh-9
+ds-2
+dg-3
 cm--3
-xu-2
-vk-7
 mr--3
 og--9
+xu-2
+vk-7
 fo--5
+ob--4
+ug--4
 oj-6
 uu-2
 bh-2
@@ -3013,12 +3019,6 @@ sp-2
 qk-6
 ej-3
 rg-8
-ob--4
-sh-9
-ds-2
-dg-3
-ug--4
-pq--3
 LIGHT 0 line 567
 wn--7
 fx-5
@@ -3036,15 +3036,15 @@ bc--10
 pa--1
 or--4
 gn--1
-mr--3
 oj-6
 uu-2
 bh-2
 nr-6
+pq--3
 ds-2
 dg-3
-pq--3
 cm--3
+mr--3
 xu-2
 vk-7
 LIGHT -1 line 571
@@ -3057,15 +3057,15 @@ bc--10
 pa--1
 or--4
 gn--1
-mr--3
 oj-6
 uu-2
 bh-2
 nr-6
+pq--3
 ds-2
 dg-3
-pq--3
 cm--3
+mr--3
 xu-2
 vk-7
 LIGHT -1 line 573
@@ -3078,15 +3078,15 @@ bc--10
 pa--1
 or--4
 gn--1
-mr--3
 oj-6
 uu-2
 bh-2
 nr-6
+pq--3
 ds-2
 dg-3
-pq--3
 cm--3
+mr--3
 xu-2
 vk-7
 LIGHT 0 line 575
@@ -3103,15 +3103,15 @@ LIGHT 1 line 577
 ox--4
 vk-7
 xu-2
+mr--3
 cm--3
-pq--3
 dg-3
 ds-2
+pq--3
 nr-6
 bh-2
 uu-2
 oj-6
-mr--3
 gn--1
 or--4
 pa--1

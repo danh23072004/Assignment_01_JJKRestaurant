@@ -776,6 +776,8 @@ zk-2
 ea--5
 bi-8
 LIGHT -1 line 309
+gy--5
+gp-2
 ea--5
 fm--5
 xi--7
@@ -784,9 +786,9 @@ bi-8
 xv--8
 zb--8
 zk-2
-gy--5
-gp-2
 LIGHT -1 line 311
+gy--5
+gp-2
 ea--5
 fm--5
 xi--7
@@ -795,9 +797,9 @@ bi-8
 xv--8
 zb--8
 zk-2
-gy--5
-gp-2
 LIGHT -1 line 313
+gy--5
+gp-2
 ea--5
 fm--5
 xi--7
@@ -806,11 +808,7 @@ bi-8
 xv--8
 zb--8
 zk-2
-gy--5
-gp-2
 LIGHT 1 line 315
-ea--5
-gp-2
 gy--5
 zk-2
 zb--8
@@ -819,39 +817,41 @@ bi-8
 ix--6
 xi--7
 fm--5
+ea--5
+gp-2
 LIGHT 1 line 317
 gy--5
-bi-8
 ea--5
-zk-2
+bi-8
 fm--5
 xi--7
+ix--6
+xv--8
+zk-2
+zb--8
 gp-2
-ix--6
-xv--8
-zb--8
 LIGHT -1 line 319
+gy--5
 ea--5
+bi-8
 fm--5
+zk-2
 xi--7
 ix--6
-bi-8
 xv--8
 zb--8
-zk-2
-gy--5
 gp-2
 LIGHT 1 line 321
 gy--5
-bi-8
 ea--5
-zk-2
 fm--5
 xi--7
-gp-2
+zk-2
 ix--6
+gp-2
 xv--8
 zb--8
+bi-8
 LIGHT 0 line 323
 ca--3
 ug-5
@@ -861,16 +861,16 @@ bv--1
 fw-9
 ls-4
 LIGHT 1 line 325
-ea--5
-gp-2
 gy--5
-zk-2
 zb--8
 xv--8
 bi-8
 ix--6
+gp-2
 xi--7
 fm--5
+zk-2
+ea--5
 LIGHT 0 line 327
 LIGHT 1 line 329
 jt--3
@@ -989,17 +989,17 @@ uc-8
 qu--9
 lk-9
 LIGHT 1 line 365
+tw--9
+qv-2
 qu--9
 lk-9
 uc-8
-tw--9
-qv-2
 LIGHT -1 line 367
 tw--9
-lk-9
-qu--9
 uc-8
+qu--9
 qv-2
+lk-9
 LIGHT 1 line 369
 LIGHT -1 line 371
 je--1

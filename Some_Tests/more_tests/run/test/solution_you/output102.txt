@@ -1352,8 +1352,6 @@ rk--2
 nf--1
 mz--3
 LIGHT 1 line 269
-io-1
-ai--8
 ti-1
 qu--8
 ig-6
@@ -1367,6 +1365,8 @@ op--9
 qf-2
 yr--10
 oz-1
+io-1
+ai--8
 LIGHT 1 line 271
 cv--7
 cn-9

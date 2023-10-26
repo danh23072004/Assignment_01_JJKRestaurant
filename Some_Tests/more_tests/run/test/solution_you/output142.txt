@@ -67,11 +67,6 @@ wk--6
 hm--3
 oq--6
 LIGHT 1 line 27
-fh--6
-cl-2
-ya-4
-ae-8
-ha-4
 pn--6
 oq--6
 hm--3
@@ -79,13 +74,13 @@ wk--6
 de--3
 pz--4
 cv--10
+fh--6
+cl-2
+ya-4
+ae-8
+ha-4
 LIGHT 1 line 29
 jy--10
-fh--6
-cl-2
-ya-4
-ae-8
-ha-4
 pn--6
 oq--6
 hm--3
@@ -93,13 +88,13 @@ wk--6
 de--3
 pz--4
 cv--10
+fh--6
+cl-2
+ya-4
+ae-8
+ha-4
 LIGHT 1 line 31
 oi--10
-fh--6
-cl-2
-ya-4
-ae-8
-ha-4
 pn--6
 oq--6
 hm--3
@@ -107,28 +102,33 @@ wk--6
 de--3
 pz--4
 cv--10
+fh--6
+cl-2
+ya-4
+ae-8
+ha-4
 jy--10
 LIGHT 0 line 33
 LIGHT -1 line 35
 ya-4
-hp--6
-oi--10
-jy--10
 wk--6
 hm--3
 oq--6
 pn--6
+hp--6
+oi--10
+jy--10
 ha-4
 ae-8
 LIGHT -1 line 37
 qj--10
-hp--6
-oi--10
-jy--10
 wk--6
 hm--3
 oq--6
 pn--6
+hp--6
+oi--10
+jy--10
 ha-4
 ae-8
 ya-4
@@ -138,13 +138,13 @@ au-6
 ya-4
 ae-8
 ha-4
+jy--10
+oi--10
+hp--6
 pn--6
 oq--6
 hm--3
 wk--6
-jy--10
-oi--10
-hp--6
 qj--10
 pk--3
 LIGHT 1 line 43
@@ -153,13 +153,13 @@ au-6
 ya-4
 ae-8
 ha-4
+jy--10
+oi--10
+hp--6
 pn--6
 oq--6
 hm--3
 wk--6
-jy--10
-oi--10
-hp--6
 qj--10
 pk--3
 LIGHT 0 line 45
@@ -167,6 +167,9 @@ LIGHT -1 line 47
 hm--3
 oq--6
 pn--6
+hp--6
+oi--10
+jy--10
 ha-4
 ae-8
 ya-4
@@ -175,14 +178,8 @@ hs-3
 js--5
 pk--3
 qj--10
-hp--6
-oi--10
-jy--10
 LIGHT 1 line 49
 ej-6
-jy--10
-oi--10
-hp--6
 qj--10
 pk--3
 js--5
@@ -191,6 +188,9 @@ au-6
 ya-4
 ae-8
 ha-4
+jy--10
+oi--10
+hp--6
 pn--6
 oq--6
 hm--3
@@ -199,6 +199,9 @@ yc--2
 hm--3
 oq--6
 pn--6
+hp--6
+oi--10
+jy--10
 ha-4
 ae-8
 ya-4
@@ -207,16 +210,10 @@ hs-3
 js--5
 pk--3
 qj--10
-hp--6
-oi--10
-jy--10
 ej-6
 LIGHT 1 line 53
 wi-7
 ej-6
-jy--10
-oi--10
-hp--6
 qj--10
 pk--3
 js--5
@@ -225,6 +222,9 @@ au-6
 ya-4
 ae-8
 ha-4
+jy--10
+oi--10
+hp--6
 pn--6
 oq--6
 hm--3
@@ -233,15 +233,15 @@ LIGHT 1 line 55
 lr--10
 ae-8
 ha-4
+jy--10
+oi--10
+hp--6
 pn--6
 oq--6
 hm--3
 yc--2
 wi-7
 ej-6
-jy--10
-oi--10
-hp--6
 qj--10
 pk--3
 js--5
@@ -251,13 +251,13 @@ ya-4
 LIGHT 0 line 57
 LIGHT 1 line 59
 hp--6
-yc--2
 wi-7
 au-6
 lr--10
 js--5
 pk--3
 qj--10
+yc--2
 hs-3
 ej-6
 LIGHT -1 line 61
@@ -265,13 +265,13 @@ wq-7
 hp--6
 ej-6
 hs-3
+yc--2
 qj--10
 pk--3
 js--5
 lr--10
 au-6
 wi-7
-yc--2
 LIGHT 1 line 63
 lr--10
 wq-7
@@ -2437,6 +2437,9 @@ nu--1
 rj--4
 fn--9
 LIGHT -1 line 383
+sr--9
+qa-4
+go-3
 sg--9
 jr--4
 dm--4
@@ -2455,9 +2458,6 @@ cn--2
 nu--1
 rj--4
 fn--9
-sr--9
-qa-4
-go-3
 LIGHT 0 line 385
 LIGHT 1 line 387
 jp--6

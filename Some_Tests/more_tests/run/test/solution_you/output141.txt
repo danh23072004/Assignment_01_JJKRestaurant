@@ -298,6 +298,7 @@ tw--7
 ad--8
 fx--9
 LIGHT -1 line 63
+oc-2
 us-2
 xf--7
 cq--2
@@ -319,7 +320,6 @@ rf-1
 tw--7
 ad--8
 fx--9
-oc-2
 LIGHT -1 line 65
 fl-2
 fx--9
@@ -2492,6 +2492,7 @@ hy--1
 op-9
 LIGHT 0 line 425
 LIGHT -1 line 427
+ty-9
 op-9
 hy--1
 kv-5
@@ -2499,10 +2500,8 @@ ba--3
 ob--8
 ue--2
 ch--2
-ty-9
 LIGHT 1 line 429
 fz--8
-op-9
 ty-9
 ch--2
 ue--2
@@ -2510,9 +2509,9 @@ ob--8
 ba--3
 kv-5
 hy--1
+op-9
 LIGHT 1 line 431
 ii--7
-op-9
 ty-9
 ch--2
 ue--2
@@ -2520,11 +2519,13 @@ ob--8
 ba--3
 kv-5
 hy--1
+op-9
 fz--8
 LIGHT -1 line 433
 xi--5
 ii--7
 fz--8
+op-9
 hy--1
 kv-5
 ba--3
@@ -2532,167 +2533,166 @@ ob--8
 ue--2
 ch--2
 ty-9
-op-9
 LIGHT -1 line 435
 xi--5
-ty-9
-kv-5
+op-9
 ch--2
 ue--2
 ob--8
+ty-9
 ba--3
-op-9
+kv-5
 hy--1
 fz--8
 ii--7
 LIGHT -1 line 437
 vi-4
 xi--5
-ty-9
-kv-5
+op-9
 ch--2
 ue--2
 ob--8
+ty-9
 ba--3
-op-9
+kv-5
 hy--1
 fz--8
 ii--7
 LIGHT 0 line 439
 LIGHT -1 line 441
 tg--3
-ty-9
+op-9
 ii--7
 fz--8
 vi-4
-op-9
 hy--1
 ba--3
 ob--8
-ue--2
 kv-5
+ue--2
+ty-9
 ch--2
 xi--5
 LIGHT 1 line 443
 lb-7
 xi--5
 ch--2
-kv-5
+ty-9
 ue--2
+kv-5
 ob--8
 ba--3
 hy--1
-op-9
 vi-4
 fz--8
 ii--7
-ty-9
+op-9
 tg--3
 LIGHT 1 line 445
 dx--10
 lb-7
 xi--5
 ch--2
-kv-5
+ty-9
 ue--2
+kv-5
 ob--8
 ba--3
 hy--1
-op-9
 vi-4
 fz--8
 ii--7
-ty-9
+op-9
 tg--3
 LIGHT -1 line 447
+tg--3
+ii--7
+fz--8
 vi-4
+ty-9
 ch--2
 xi--5
 lb-7
 dx--10
-tg--3
-ty-9
-ii--7
-fz--8
 LIGHT 1 line 449
 au-3
-vi-4
-fz--8
-ii--7
-ty-9
-tg--3
 dx--10
 lb-7
 xi--5
 ch--2
+ty-9
+vi-4
+fz--8
+ii--7
+tg--3
 LIGHT 1 line 451
 ql-4
-vi-4
-fz--8
-ii--7
-ty-9
-tg--3
 dx--10
 lb-7
 xi--5
 ch--2
+ty-9
+vi-4
+fz--8
+ii--7
+tg--3
 au-3
 LIGHT 0 line 453
 LIGHT 0 line 455
 LIGHT 1 line 457
 ty-1
 yi-2
-dx--10
-lb-7
-xi--5
-au-3
-ql-4
 vi-4
 fz--8
 ii--7
 tg--3
+au-3
+ql-4
+dx--10
+lb-7
+xi--5
 LIGHT -1 line 459
 zq-4
 ty-1
+xi--5
+lb-7
+dx--10
+ql-4
+au-3
 tg--3
 ii--7
 fz--8
 vi-4
-ql-4
-au-3
-xi--5
-lb-7
-dx--10
 yi-2
 LIGHT 1 line 461
 tg--3
+au-3
+ql-4
+dx--10
+lb-7
 ty-1
 zq-4
 yi-2
-dx--10
-lb-7
-au-3
-ql-4
 LIGHT -1 line 463
 uw--10
-ql-4
-au-3
-lb-7
-dx--10
 yi-2
 zq-4
 ty-1
+lb-7
+dx--10
+ql-4
+au-3
 tg--3
 LIGHT -1 line 465
 xe--8
 uw--10
-ql-4
-au-3
-lb-7
-dx--10
 yi-2
 zq-4
 ty-1
+lb-7
+dx--10
+ql-4
+au-3
 tg--3
 LIGHT 0 line 467
 LIGHT 0 line 469
@@ -2701,13 +2701,13 @@ LIGHT 1 line 473
 hj--10
 kj-6
 tg--3
+au-3
+ql-4
+dx--10
+lb-7
 ty-1
 zq-4
 yi-2
-dx--10
-lb-7
-au-3
-ql-4
 uw--10
 xe--8
 ix--8
@@ -2719,26 +2719,26 @@ ji-4
 ix--8
 xe--8
 uw--10
-ql-4
-au-3
-lb-7
-dx--10
 yi-2
 zq-4
 ty-1
+lb-7
+dx--10
+ql-4
+au-3
 tg--3
 kj-6
 LIGHT 1 line 477
 lu--9
 kj-6
 tg--3
+au-3
+ql-4
+dx--10
+lb-7
 ty-1
 zq-4
 yi-2
-dx--10
-lb-7
-au-3
-ql-4
 uw--10
 xe--8
 ix--8

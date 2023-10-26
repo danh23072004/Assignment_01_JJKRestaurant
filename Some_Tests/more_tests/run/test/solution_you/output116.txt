@@ -532,10 +532,6 @@ nw-4
 bd-3
 qj-8
 LIGHT 1 line 139
-ft--2
-hh-4
-ho-7
-ko-5
 oy--2
 xr-7
 df-4
@@ -551,6 +547,10 @@ qj-8
 sm--9
 kp--9
 sa--9
+ft--2
+hh-4
+ho-7
+ko-5
 LIGHT -1 line 141
 xn--4
 tb--5
@@ -2233,7 +2233,6 @@ zl-5
 ff-3
 kp--6
 LIGHT 1 line 319
-fp-9
 ap-9
 gp-4
 sf-7
@@ -2253,8 +2252,8 @@ qm--3
 ql-1
 hs--9
 ko--4
+fp-9
 LIGHT 1 line 321
-fp-9
 ap-9
 gp-4
 sf-7
@@ -2274,7 +2273,9 @@ qm--3
 ql-1
 hs--9
 ko--4
+fp-9
 LIGHT -1 line 323
+ap-9
 fp-9
 ko--4
 hs--9
@@ -2294,9 +2295,7 @@ vr-9
 mn-8
 sf-7
 gp-4
-ap-9
 LIGHT 1 line 325
-fp-9
 ap-9
 gp-4
 sf-7
@@ -2316,8 +2315,8 @@ qm--3
 ql-1
 hs--9
 ko--4
+fp-9
 LIGHT 1 line 327
-fp-9
 ap-9
 gp-4
 sf-7
@@ -2337,8 +2336,8 @@ qm--3
 ql-1
 hs--9
 ko--4
+fp-9
 LIGHT 1 line 329
-fp-9
 ap-9
 gp-4
 sf-7
@@ -2358,6 +2357,7 @@ qm--3
 ql-1
 hs--9
 ko--4
+fp-9
 LIGHT 0 line 331
 fy-4
 kh--10
@@ -2380,6 +2380,7 @@ zm-1
 ss--10
 nb-3
 LIGHT -1 line 333
+ap-9
 fp-9
 ko--4
 hs--9
@@ -2399,7 +2400,6 @@ vr-9
 mn-8
 sf-7
 gp-4
-ap-9
 LIGHT 0 line 335
 fy-4
 kh--10
@@ -2422,6 +2422,7 @@ zm-1
 ss--10
 nb-3
 LIGHT -1 line 337
+ap-9
 fp-9
 ko--4
 hs--9
@@ -2441,7 +2442,6 @@ vr-9
 mn-8
 sf-7
 gp-4
-ap-9
 LIGHT 0 line 339
 fy-4
 kh--10
@@ -2464,7 +2464,6 @@ zm-1
 ss--10
 nb-3
 LIGHT 1 line 341
-fp-9
 ap-9
 gp-4
 sf-7
@@ -2484,8 +2483,8 @@ qm--3
 ql-1
 hs--9
 ko--4
+fp-9
 LIGHT 1 line 343
-fp-9
 ap-9
 gp-4
 sf-7
@@ -2505,6 +2504,7 @@ qm--3
 ql-1
 hs--9
 ko--4
+fp-9
 LIGHT 0 line 345
 fy-4
 kh--10
@@ -3568,6 +3568,7 @@ ka--9
 LIGHT 0 line 455
 um--3
 LIGHT -1 line 457
+oq-1
 gy-1
 ah--7
 pc--1
@@ -3587,7 +3588,6 @@ fq-5
 br-9
 oa-9
 ka--9
-oq-1
 LIGHT -1 line 459
 sq-1
 gs--9

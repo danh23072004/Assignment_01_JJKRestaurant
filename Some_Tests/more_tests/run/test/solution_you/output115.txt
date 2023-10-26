@@ -448,14 +448,14 @@ nt-1
 rr-1
 LIGHT 0 line 129
 LIGHT 1 line 131
-ei--3
-vw-7
 ii--3
 nt-1
 rr-1
 cs-8
 ui--4
 wh--4
+ei--3
+vw-7
 LIGHT 1 line 133
 lm--5
 cs-8
@@ -1058,6 +1058,7 @@ mg--9
 ia-3
 pt-6
 LIGHT -1 line 253
+uj--10
 oe--10
 zy-4
 ca-6
@@ -1066,7 +1067,6 @@ zz--9
 ia-3
 pt-6
 mg--9
-uj--10
 LIGHT 0 line 255
 LIGHT 0 line 257
 io-7

@@ -172,6 +172,7 @@ rs--7
 wc-3
 qa-4
 LIGHT -1 line 55
+yh-2
 jq-2
 qe-7
 lj-1
@@ -186,7 +187,6 @@ wc-3
 ua--9
 qa-4
 rs--7
-yh-2
 LIGHT -1 line 57
 qd--8
 lj-1
@@ -2797,7 +2797,6 @@ pp-1
 ju--10
 cw--7
 LIGHT 1 line 477
-wz-5
 gy-5
 gn--4
 rf-7
@@ -2827,7 +2826,9 @@ xr-3
 zm--5
 te--10
 jl-6
+wz-5
 LIGHT -1 line 479
+gy-5
 wz-5
 jl-6
 te--10
@@ -2857,9 +2858,7 @@ mg--7
 gs--1
 rf-7
 gn--4
-gy-5
 LIGHT 1 line 481
-wz-5
 gy-5
 gn--4
 rf-7
@@ -2889,7 +2888,9 @@ xr-3
 zm--5
 te--10
 jl-6
+wz-5
 LIGHT -1 line 483
+gy-5
 wz-5
 jl-6
 te--10
@@ -2919,9 +2920,7 @@ mg--7
 gs--1
 rf-7
 gn--4
-gy-5
 LIGHT 1 line 485
-wz-5
 gy-5
 gn--4
 rf-7
@@ -2951,6 +2950,7 @@ xr-3
 zm--5
 te--10
 jl-6
+wz-5
 LIGHT -1 line 487
 yc--7
 cw--7
@@ -3344,7 +3344,6 @@ sm-8
 yc--7
 ed-1
 LIGHT 1 line 523
-ed-1
 eh-1
 xt--10
 pp-1
@@ -3365,6 +3364,7 @@ sm-8
 ju--10
 cw--7
 yc--7
+ed-1
 LIGHT -1 line 525
 kv--7
 io--6

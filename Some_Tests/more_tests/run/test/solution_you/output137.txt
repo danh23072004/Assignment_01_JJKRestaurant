@@ -1906,6 +1906,7 @@ zt--5
 wo--2
 wf--8
 LIGHT -1 line 367
+co-5
 ex-5
 ev--6
 af--7
@@ -1922,7 +1923,6 @@ wo--2
 gs-4
 jk-8
 wf--8
-co-5
 LIGHT 1 line 369
 uk--8
 jk-8
@@ -2711,7 +2711,6 @@ ei--4
 ki--9
 he--10
 LIGHT 1 line 457
-gx-2
 ze-2
 hf-3
 he--10
@@ -2736,6 +2735,7 @@ fq--8
 oy--10
 qz--3
 wi--6
+gx-2
 LIGHT -1 line 459
 zu--9
 fj--3

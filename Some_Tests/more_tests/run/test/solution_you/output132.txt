@@ -1656,6 +1656,11 @@ hy-3
 LIGHT 0 line 307
 LIGHT -1 line 309
 yl-2
+yn--1
+rn-7
+ak-1
+wl-7
+jl-2
 ov--1
 wa--8
 hy-3
@@ -1665,81 +1670,76 @@ qa--4
 kb--10
 zl-6
 qz-1
-yn--1
-rn-7
-ak-1
-wl-7
-jl-2
 LIGHT 0 line 311
 LIGHT 1 line 313
 yl-2
-jl-2
-wl-7
-ak-1
-rn-7
-yn--1
-qz-1
-zl-6
 kb--10
 qa--4
 aq--5
 ea--8
-hy-3
+qz-1
 wa--8
 ov--1
+zl-6
+hy-3
+jl-2
+wl-7
+yn--1
+ak-1
+rn-7
 LIGHT 0 line 315
 LIGHT -1 line 317
 zl-6
+qa--4
+kb--10
+yl-2
 yn--1
 qq--10
 jl-2
-yl-2
 hy-3
-qa--4
-kb--10
 LIGHT 1 line 319
 br--3
 zl-6
-kb--10
-qa--4
 hy-3
-yl-2
 jl-2
 qq--10
 yn--1
+yl-2
+kb--10
+qa--4
 LIGHT -1 line 321
 wm--2
 br--3
+qa--4
+kb--10
+yl-2
 yn--1
 qq--10
 jl-2
-yl-2
 hy-3
-qa--4
-kb--10
 zl-6
 LIGHT 1 line 323
 rq--1
 zl-6
-kb--10
-qa--4
 hy-3
-yl-2
 jl-2
 qq--10
 yn--1
+yl-2
+kb--10
+qa--4
 br--3
 wm--2
 LIGHT 1 line 325
 en--1
 zl-6
-kb--10
-qa--4
 hy-3
-yl-2
 jl-2
 qq--10
 yn--1
+yl-2
+kb--10
+qa--4
 br--3
 wm--2
 rq--1
@@ -1750,46 +1750,46 @@ ws--10
 rq--1
 wm--2
 br--3
+qa--4
+kb--10
+yl-2
 yn--1
 qq--10
 jl-2
-yl-2
 hy-3
-qa--4
-kb--10
 zl-6
 en--1
 LIGHT 0 line 331
 LIGHT -1 line 333
-br--3
-wm--2
 rq--1
 aq-3
 ws--10
 en--1
 qq--10
+br--3
+wm--2
 LIGHT 1 line 335
 gv--5
+rq--1
+wm--2
 br--3
 qq--10
 en--1
 ws--10
 aq-3
-rq--1
-wm--2
 LIGHT -1 line 337
 br--3
-gv--5
 wm--2
 rq--1
+gv--5
 aq-3
 ws--10
 en--1
 LIGHT -1 line 339
 bn--6
-gv--5
 wm--2
 rq--1
+gv--5
 aq-3
 ws--10
 en--1
@@ -1799,20 +1799,20 @@ bn--6
 br--3
 en--1
 ws--10
-rq--1
-aq-3
-wm--2
 gv--5
+aq-3
+rq--1
+wm--2
 LIGHT -1 line 343
 he-3
 bn--6
 br--3
 en--1
 ws--10
-rq--1
-aq-3
-wm--2
 gv--5
+aq-3
+rq--1
+wm--2
 LIGHT -1 line 345
 cw-8
 he-3
@@ -1820,10 +1820,10 @@ bn--6
 br--3
 en--1
 ws--10
-rq--1
-aq-3
-wm--2
 gv--5
+aq-3
+rq--1
+wm--2
 LIGHT -1 line 347
 fc--6
 he-3
@@ -1831,10 +1831,10 @@ bn--6
 br--3
 en--1
 ws--10
-rq--1
-aq-3
-wm--2
 gv--5
+aq-3
+rq--1
+wm--2
 cw-8
 LIGHT 0 line 349
 LIGHT -1 line 351

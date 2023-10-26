@@ -4,32 +4,32 @@ LIGHT 1 line 5
 ob--3
 da--3
 LIGHT -1 line 7
-da--3
 ob--3
+da--3
 LIGHT -1 line 9
 zj-9
-da--3
 ob--3
+da--3
 LIGHT -1 line 11
 hv--9
-da--3
 ob--3
+da--3
 zj-9
 LIGHT 0 line 13
 LIGHT -1 line 15
 tf--2
 hp-7
 hv--9
-da--3
 ob--3
+da--3
 zj-9
 LIGHT -1 line 17
 zm--1
 tf--2
 hp-7
 hv--9
-da--3
 ob--3
+da--3
 zj-9
 LIGHT 1 line 19
 hf-5
@@ -37,8 +37,8 @@ hp-7
 tf--2
 zm--1
 zj-9
-ob--3
 da--3
+ob--3
 hv--9
 LIGHT 1 line 21
 kf-2
@@ -47,16 +47,16 @@ hp-7
 tf--2
 zm--1
 zj-9
-ob--3
 da--3
+ob--3
 hv--9
 LIGHT 1 line 23
 kf-2
 zj-9
 hv--9
-da--3
-hp-7
 ob--3
+hp-7
+da--3
 zm--1
 tf--2
 hf-5
@@ -369,6 +369,8 @@ ni--7
 vl--9
 qc--10
 LIGHT -1 line 107
+np--2
+yv-2
 rs--2
 rl-5
 cu--7
@@ -377,8 +379,6 @@ ah--10
 wo--3
 cv-9
 ry--5
-np--2
-yv-2
 LIGHT 0 line 109
 oy--10
 rv-2
@@ -391,6 +391,8 @@ ni--7
 vl--9
 qc--10
 LIGHT -1 line 111
+np--2
+yv-2
 rs--2
 rl-5
 cu--7
@@ -399,8 +401,6 @@ ah--10
 wo--3
 cv-9
 ry--5
-np--2
-yv-2
 LIGHT 1 line 113
 vl--9
 ha-7

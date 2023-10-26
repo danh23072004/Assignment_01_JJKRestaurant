@@ -25,16 +25,16 @@ td--1
 sm-6
 fn-5
 LIGHT 1 line 21
-fn-5
 mw-5
 sm-6
 td--1
+fn-5
 LIGHT -1 line 23
 dt-6
+mw-5
 fn-5
 td--1
 sm-6
-mw-5
 LIGHT 1 line 25
 dt-6
 LIGHT 1 line 27
@@ -238,43 +238,43 @@ ah--1
 ra--3
 ce--10
 LIGHT -1 line 115
+mn-8
+ce--10
 ts-8
 pf--4
 ah--1
 ra--3
-mn-8
-ce--10
 LIGHT 1 line 117
 wy--10
-ts-8
-ce--10
 mn-8
 ra--3
 ah--1
 pf--4
+ts-8
+ce--10
 LIGHT 0 line 119
 LIGHT -1 line 121
 mn-8
-ce--10
-ts-8
 lk--10
 wy--10
+ce--10
+ts-8
 pf--4
 LIGHT 1 line 123
 ti--8
 mn-8
 pf--4
-wy--10
-lk--10
 ts-8
 ce--10
+wy--10
+lk--10
 LIGHT -1 line 125
 ts-8
-lk--10
-wy--10
 pf--4
 mn-8
 ti--8
+lk--10
+wy--10
 LIGHT 0 line 127
 LIGHT -1 line 129
 LIGHT 0 line 131
@@ -533,7 +533,6 @@ yt--1
 sa--7
 vo--4
 LIGHT 1 line 239
-vo--4
 nq--4
 xx--1
 ka--4
@@ -543,6 +542,7 @@ yt--1
 vi-8
 sa--7
 wb-3
+vo--4
 LIGHT 0 line 241
 yu-9
 mz--2
@@ -551,79 +551,79 @@ fl-2
 LIGHT 1 line 243
 nq--4
 vo--4
+wb-3
 sa--7
 yt--1
-wb-3
-tm--3
-ka--4
 vi-8
-xx--1
+tm--3
 kr-5
+ka--4
+xx--1
 LIGHT -1 line 245
 nq--4
-kr-5
 xx--1
-vi-8
 ka--4
+kr-5
 tm--3
-wb-3
+vi-8
 yt--1
 sa--7
+wb-3
 vo--4
 LIGHT 1 line 247
 nq--4
 vo--4
+wb-3
 sa--7
 yt--1
-wb-3
-tm--3
-ka--4
 vi-8
-xx--1
+tm--3
 kr-5
+ka--4
+xx--1
 LIGHT 1 line 249
 nq--4
 vo--4
+wb-3
 sa--7
 yt--1
-wb-3
-tm--3
-ka--4
 vi-8
-xx--1
+tm--3
 kr-5
+ka--4
+xx--1
 LIGHT -1 line 251
 nq--4
-kr-5
 xx--1
-vi-8
 ka--4
+kr-5
 tm--3
-wb-3
+vi-8
 yt--1
 sa--7
+wb-3
 vo--4
 LIGHT 1 line 253
 nq--4
 vo--4
+wb-3
 sa--7
 yt--1
-wb-3
-tm--3
-ka--4
 vi-8
-xx--1
+tm--3
 kr-5
+ka--4
+xx--1
 LIGHT -1 line 255
 tp--4
 je--4
 mz--2
 fl-2
 sa--7
+wb-3
 nq--4
 xx--1
 tm--3
-wb-3
 yu-9
 LIGHT -1 line 257
 tp--4
@@ -631,10 +631,10 @@ je--4
 mz--2
 fl-2
 sa--7
+wb-3
 nq--4
 xx--1
 tm--3
-wb-3
 yu-9
 LIGHT 0 line 259
 bk--10
@@ -647,10 +647,10 @@ vf--8
 LIGHT 1 line 261
 tp--4
 yu-9
-wb-3
 tm--3
 xx--1
 nq--4
+wb-3
 sa--7
 fl-2
 mz--2
@@ -1678,6 +1678,8 @@ ww-7
 dq--2
 pj--7
 LIGHT -1 line 459
+vf--4
+ot-3
 xp--4
 xk--6
 vt--1
@@ -1686,11 +1688,7 @@ kx--5
 fg-9
 dv-7
 bn--2
-vf--4
-ot-3
 LIGHT 1 line 461
-xp--4
-ot-3
 vf--4
 bn--2
 dv-7
@@ -1699,7 +1697,11 @@ kx--5
 cd--9
 vt--1
 xk--6
+xp--4
+ot-3
 LIGHT -1 line 463
+vf--4
+ot-3
 xp--4
 xk--6
 vt--1
@@ -1708,11 +1710,7 @@ kx--5
 fg-9
 dv-7
 bn--2
-vf--4
-ot-3
 LIGHT 1 line 465
-xp--4
-ot-3
 vf--4
 bn--2
 dv-7
@@ -1721,7 +1719,11 @@ kx--5
 cd--9
 vt--1
 xk--6
+xp--4
+ot-3
 LIGHT -1 line 467
+vf--4
+ot-3
 xp--4
 xk--6
 vt--1
@@ -1730,11 +1732,7 @@ kx--5
 fg-9
 dv-7
 bn--2
-vf--4
-ot-3
 LIGHT 1 line 469
-xp--4
-ot-3
 vf--4
 bn--2
 dv-7
@@ -1743,9 +1741,9 @@ kx--5
 cd--9
 vt--1
 xk--6
+xp--4
+ot-3
 LIGHT 1 line 471
-xp--4
-ot-3
 vf--4
 bn--2
 dv-7
@@ -1754,6 +1752,8 @@ kx--5
 cd--9
 vt--1
 xk--6
+xp--4
+ot-3
 LIGHT 0 line 473
 se-3
 qq-3
@@ -1766,6 +1766,8 @@ pj--7
 qc--1
 yb-4
 LIGHT -1 line 475
+vf--4
+ot-3
 xp--4
 xk--6
 vt--1
@@ -1774,11 +1776,7 @@ kx--5
 fg-9
 dv-7
 bn--2
-vf--4
-ot-3
 LIGHT 1 line 477
-xp--4
-ot-3
 vf--4
 bn--2
 dv-7
@@ -1787,7 +1785,11 @@ kx--5
 cd--9
 vt--1
 xk--6
+xp--4
+ot-3
 LIGHT -1 line 479
+vf--4
+ot-3
 xp--4
 xk--6
 vt--1
@@ -1796,8 +1798,6 @@ kx--5
 fg-9
 dv-7
 bn--2
-vf--4
-ot-3
 LIGHT 0 line 481
 se-3
 qq-3
@@ -1812,47 +1812,47 @@ yb-4
 LIGHT -1 line 483
 vf--4
 bn--2
+dv-7
 kx--5
 cd--9
 vt--1
-ot-3
-dv-7
 xk--6
 xp--4
 fg-9
+ot-3
 LIGHT -1 line 485
 vf--4
 bn--2
+dv-7
 kx--5
 cd--9
 vt--1
-ot-3
-dv-7
 xk--6
 xp--4
 fg-9
+ot-3
 LIGHT 1 line 487
 vf--4
+ot-3
 fg-9
 xp--4
 xk--6
-dv-7
-ot-3
 vt--1
 cd--9
 kx--5
+dv-7
 bn--2
 LIGHT -1 line 489
 vf--4
 bn--2
+dv-7
 kx--5
 cd--9
 vt--1
-ot-3
-dv-7
 xk--6
 xp--4
 fg-9
+ot-3
 LIGHT 0 line 491
 se-3
 qq-3
@@ -1867,25 +1867,25 @@ yb-4
 LIGHT -1 line 493
 vf--4
 bn--2
+dv-7
 kx--5
 cd--9
 vt--1
-ot-3
-dv-7
 xk--6
 xp--4
 fg-9
+ot-3
 LIGHT -1 line 495
 vf--4
 bn--2
+dv-7
 kx--5
 cd--9
 vt--1
-ot-3
-dv-7
 xk--6
 xp--4
 fg-9
+ot-3
 LIGHT 0 line 497
 se-3
 qq-3
@@ -1898,16 +1898,16 @@ pj--7
 qc--1
 yb-4
 LIGHT -1 line 499
+vf--4
+fg-9
+dv-7
 xp--4
 xk--6
+ot-3
 vt--1
 cd--9
 kx--5
-fg-9
-dv-7
 bn--2
-vf--4
-ot-3
 LIGHT 0 line 501
 se-3
 qq-3
@@ -1920,49 +1920,49 @@ pj--7
 qc--1
 yb-4
 LIGHT 1 line 503
-xp--4
-ot-3
 vf--4
 bn--2
-dv-7
-fg-9
 kx--5
 cd--9
 vt--1
+ot-3
 xk--6
+xp--4
+dv-7
+fg-9
 LIGHT -1 line 505
+vf--4
+fg-9
+dv-7
 xp--4
 xk--6
+ot-3
 vt--1
 cd--9
 kx--5
-fg-9
-dv-7
 bn--2
-vf--4
-ot-3
 LIGHT 1 line 507
 vf--4
-fg-9
 xp--4
 xk--6
-dv-7
-ot-3
 vt--1
+fg-9
 cd--9
 kx--5
+dv-7
+ot-3
 bn--2
 LIGHT -1 line 509
 vf--4
 bn--2
-kx--5
-cd--9
-vt--1
 ot-3
 dv-7
+kx--5
+cd--9
+fg-9
+vt--1
 xk--6
 xp--4
-fg-9
 LIGHT -1 line 511
 qc--1
 pj--7

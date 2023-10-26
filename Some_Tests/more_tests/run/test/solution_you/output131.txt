@@ -19,72 +19,72 @@ zz-4
 LIGHT 0 line 15
 LIGHT -1 line 17
 bj-8
-zz-4
 vh--6
+zz-4
 ft-8
 LIGHT 1 line 19
-ft-8
 bj-8
-vh--6
 zz-4
+vh--6
+ft-8
 LIGHT -1 line 21
 ia--6
-zz-4
-vh--6
-bj-8
 ft-8
+vh--6
+zz-4
+bj-8
 LIGHT 1 line 23
 qj-1
-ft-8
 bj-8
-vh--6
 zz-4
+vh--6
+ft-8
 ia--6
 LIGHT -1 line 25
 jm-9
 qj-1
 ia--6
-zz-4
-vh--6
-bj-8
 ft-8
+vh--6
+zz-4
+bj-8
 LIGHT 1 line 27
 ve-5
 jm-9
-ft-8
 bj-8
-vh--6
 zz-4
+vh--6
+ft-8
 ia--6
 qj-1
 LIGHT -1 line 29
 ve-5
 jm-9
-ft-8
-vh--6
 bj-8
-ia--6
+vh--6
 zz-4
+ia--6
+ft-8
 qj-1
 LIGHT 1 line 31
 uh-2
 ve-5
 qj-1
-zz-4
-ia--6
-bj-8
-vh--6
 ft-8
+ia--6
+zz-4
+vh--6
+bj-8
 jm-9
 LIGHT -1 line 33
 uh-2
 ve-5
 qj-1
-zz-4
-ia--6
-bj-8
-vh--6
 ft-8
+ia--6
+zz-4
+vh--6
+bj-8
 jm-9
 LIGHT -1 line 35
 LIGHT 0 line 37
@@ -1349,8 +1349,6 @@ ze-3
 wc--7
 qk--5
 LIGHT 1 line 283
-fv--8
-sc-2
 hq--8
 jz--5
 tz-2
@@ -1369,6 +1367,8 @@ zn-9
 sm--9
 tb--4
 ao--9
+fv--8
+sc-2
 LIGHT 0 line 285
 ae--9
 ze-3
@@ -1433,8 +1433,6 @@ nh-1
 mr-1
 it-7
 LIGHT 1 line 295
-sm--9
-su-8
 ae--9
 fn--4
 lz--8
@@ -1453,9 +1451,9 @@ fv--8
 ao--9
 zn-9
 tb--4
+sm--9
+su-8
 LIGHT 1 line 297
-sm--9
-su-8
 ae--9
 fn--4
 lz--8
@@ -1474,6 +1472,8 @@ fv--8
 ao--9
 zn-9
 tb--4
+sm--9
+su-8
 LIGHT -1 line 299
 ze-3
 ao--9
@@ -3700,8 +3700,6 @@ qe-5
 LIGHT 0 line 571
 qe-5
 LIGHT 1 line 573
-ai--8
-me-4
 ts--8
 zo--7
 cd--6
@@ -3720,9 +3718,9 @@ qp-8
 tv--8
 gd--7
 vp--3
+ai--8
+me-4
 LIGHT 1 line 575
-ai--8
-me-4
 ts--8
 zo--7
 cd--6
@@ -3741,6 +3739,8 @@ qp-8
 tv--8
 gd--7
 vp--3
+ai--8
+me-4
 LIGHT 1 line 577
 je--3
 md-7
